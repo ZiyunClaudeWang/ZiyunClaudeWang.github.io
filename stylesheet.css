@@ -1,3 +1,9 @@
+:root {
+  --theme-color: #8C1515;
+  --theme-color-light: rgba(140, 21, 21, 0.1);
+  --theme-color-light-hover: rgba(140, 21, 21, 0.2);
+}
+
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -64,13 +70,13 @@
 }
 
 a {
-  color: #1772d0;
+  color: var(--theme-color);
   text-decoration: none;
 }
 
 a:focus,
 a:hover {
-  color: #f09228;
+  color: var(--theme-color);
   text-decoration: none;
 }
 
@@ -78,8 +84,7 @@ body,
 td,
 th,
 tr,
-p,
-a {
+p {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -91,19 +96,23 @@ strong {
   font-size: 16px;
 }
 
+.name strong {
+  font-size: inherit;
+}
+
 h2 {
   margin: 0;
   font-weight: 600;
   font-family: 'Inter', sans-serif;
   font-size: 28px;
-  color: #8C1515;
+  color: var(--theme-color);
 }
 
 .papertitle {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 700;
-  color: #8C1515;
+  color: var(--theme-color);
 }
 
 .name {
@@ -111,7 +120,7 @@ h2 {
   margin: 0;
   font-family: 'Inter', sans-serif;
   font-size: 36px;
-  color: #8C1515;
+  color: var(--theme-color);
 }
 
 .one {
@@ -152,7 +161,7 @@ h2 {
   font-weight: 600;
   font-family: 'Inter', sans-serif;
   font-size: 28px;
-  color: #8C1515;
+  color: var(--theme-color);
   padding-bottom: 10px;
 }
 
@@ -180,14 +189,15 @@ table:last-of-type tr td[style*="width:75%"] a:not([href]) {
   font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
   color: #666;
   font-size: 12px;
+  font-weight: bold !important;
 }
 
 /* Project links styling */
 table:last-of-type tr td[style*="width:75%"] a[href] {
   font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
-  color: #8C1515;
+  color: var(--theme-color);
   font-size: 12px;
-  background-color: rgba(140, 21, 21, 0.1);
+  background-color: var(--theme-color-light);
   padding: 2px 4px;
   border-radius: 2px;
   text-decoration: none;
@@ -195,7 +205,7 @@ table:last-of-type tr td[style*="width:75%"] a[href] {
 }
 
 table:last-of-type tr td[style*="width:75%"] a[href]:hover {
-  background-color: rgba(140, 21, 21, 0.2);
+  background-color: var(--theme-color-light-hover);
 }
 
 /* Venue names and other project text styling */
@@ -216,10 +226,36 @@ table:last-of-type tr td[style*="width:75%"] {
   font-size: 12px;
 }
 
+/* Ensure strong tags in paper entries are bold */
+table:last-of-type tr td[style*="width:75%"] strong {
+  font-weight: bold !important;
+  font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+  color: #666 !important;
+  font-size: 12px !important;
+}
+
+/* Force all strong elements to be bold */
+strong {
+  font-weight: bold !important;
+}
+
+/* Specific styling for author names */
+.author-name {
+  font-weight: bold !important;
+  font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
+  color: #666 !important;
+  font-size: 12px !important;
+}
+
+/* Underline for Ziyun Wang name */
+table:last-of-type tr td[style*="width:75%"] strong {
+  text-decoration: underline;
+}
+
 /* Override paper title styling */
 table:last-of-type tr td[style*="width:75%"] .papertitle {
   font-family: 'Inter', sans-serif;
-  color: #8C1515;
+  color: var(--theme-color);
 }
 
 /* Profile section enhancement */
