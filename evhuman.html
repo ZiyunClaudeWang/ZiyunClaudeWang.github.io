@@ -1,120 +1,151 @@
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TYPQ2VXYS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-5TYPQ2VXYS');
+    </script>
 
     <title>Continuous-Time Human Motion Field from Events</title>
 
-    <meta name="author" content="Ziyun Wang">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Continuous-Time Human Motion Field from Events">
+    <meta property="og:url" content="https://ziyunclaudewang.github.io/evhuman.html">
+    <meta property="og:type" content="website">
+    <link rel="author" href="https://ziyunclaudewang.github.io">
 
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <!-- Fonts and stuff -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5TYPQ2VXYS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="stylesheet" type="text/css" href="evhuman/project.css" media="screen">
+    <link rel="stylesheet" type="text/css" media="screen" href="evhuman/iconize.css">
 
-  gtag('config', 'G-5TYPQ2VXYS');
-</script>
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          </tbody></table>
-          
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h1 style="text-align: center; margin-bottom: 10px;">Continuous-Time Human Motion Field from Events</h1>
-                <p style="text-align: center; font-size: 14px; color: #666;">
-                  Ziyun Wang<sup>1</sup>, Ruijun Zhang<sup>1</sup>, Zi-Yan Liu<sup>1</sup>, Yufu Wang<sup>1</sup>, Kostas Daniilidis<sup>1</sup><br>
-                  <sup>1</sup>University of Pennsylvania
-                </p>
-                <p style="text-align: center; margin-top: 20px;">
-                  <strong>arXiv:2412.01747 [cs.CV]</strong>
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h2>Abstract</h2>
-                <p>
-                  This paper addresses the challenges of estimating a continuous-time human motion field from a stream of events. 
-                  Existing Human Mesh Recovery (HMR) methods rely predominantly on frame-based approaches, which are prone to 
-                  aliasing and inaccuracies due to limited temporal resolution and motion blur. In this work, we predict a 
-                  continuous-time human motion field directly from events by leveraging a recurrent feed-forward neural network 
-                  to predict human motion in the latent space of possible human motions.
-                </p>
-                <p>
-                  Prior state-of-the-art event-based methods rely on computationally intensive optimization across a fixed 
-                  number of poses at high frame rates, which becomes prohibitively expensive as we increase the temporal resolution. 
-                  In comparison, we present the first work that replaces traditional discrete-time predictions with a continuous 
-                  human motion field represented as a time-implicit function, enabling parallel pose queries at arbitrary temporal resolutions.
-                </p>
-                <p>
-                  Despite the promises of event cameras, few benchmarks have tested the limit of high-speed human motion estimation. 
-                  We introduce Beam-splitter Event Agile Human Motion Dataset—a hardware-synchronized high-speed human dataset to fill this gap. 
-                  On this new data, our method improves joint errors by 23.8% compared to previous event human methods while reducing 
-                  the computational time by 69%.
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h2>Paper</h2>
-                <p style="text-align: center;">
-                  <a href="https://arxiv.org/abs/2412.01747" style="color: #1772d0; text-decoration: none;">[arXiv]</a> &nbsp;/&nbsp;
-                  <a href="https://arxiv.org/pdf/2412.01747" style="color: #1772d0; text-decoration: none;">[PDF]</a> &nbsp;/&nbsp;
-                  [Code]
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h2>Key Contributions</h2>
-                <ul>
-                  <li><strong>Continuous-Time Motion Field:</strong> First work to replace discrete-time predictions with a continuous human motion field represented as a time-implicit function</li>
-                  <li><strong>Parallel Pose Queries:</strong> Enables pose queries at arbitrary temporal resolutions</li>
-                  <li><strong>Beam-splitter Event Agile Human Motion Dataset:</strong> Hardware-synchronized high-speed human dataset for benchmarking</li>
-                  <li><strong>Performance Improvements:</strong> 23.8% improvement in joint errors and 69% reduction in computational time compared to previous methods</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h2>Supplemental Video</h2>
-                <p style="text-align: center;">
-                  [Video content will be embedded here]
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h2>Qualitative Results</h2>
-                <p style="text-align: center;">
-                  [Qualitative results and visualizations will be displayed here]
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h2>Dataset</h2>
-                <p>
-                  <strong>Beam-splitter Event Agile Human Motion Dataset:</strong> A hardware-synchronized high-speed human dataset 
-                  designed to test the limits of high-speed human motion estimation using event cameras. This dataset fills the gap 
-                  in existing benchmarks for event-based human motion analysis.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
-    </table>
-  </body>
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <script src="evhuman/webcomponents-loader.js"></script>
+
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="evhuman/intersection-observer.js"></script>
+
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="evhuman/ResizeObserver.js"></script>
+
+</head>
+
+<body>
+    <div id="content">
+        <div class="section logos">
+            <a href="https://www.grasp.upenn.edu/" target="_blank"><img width="40%" src="evhuman/grasp_logo.svg"></a>
+        </div>
+
+        <div class="section head">
+            <h1>Continuous-Time Human Motion Field from Events</h1>
+
+            <div class="authors">
+                Ziyun Wang<sup>1,2</sup>,
+                Ruijun Zhang<sup>1</sup>,
+                Zi-Yan Liu<sup>1</sup>,
+                Yufu Wang<sup>1</sup>,
+                Kostas Daniilidis<sup>1,3</sup>
+            </div>
+
+            <div class="affiliations">
+                <a href="https://www.cis.upenn.edu/" target="_blank"><sup>1</sup>University of Pennsylvania</a>&nbsp;&nbsp;
+                <a href="https://www.jhu.edu/" target="_blank"><sup>2</sup>Johns Hopkins University</a>&nbsp;&nbsp;
+                <a href="https://archimedesai.gr/" target="_blank"><sup>3</sup>Archimedes, Athena RC</a>&nbsp;&nbsp;
+            </div>
+
+            <div class="venue">
+                <a href="https://arxiv.org/abs/2412.01747" target="_blank">Arxiv</a> | 
+                <a href="https://arxiv.org/pdf/2412.01747" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <div id="content-inner">
+            <div class="section downloads">
+                <center>
+                    <ul>
+                        <li class="grid">
+                            <div class="griditem">
+                                <a href="https://arxiv.org/pdf/2412.01747" target="_blank" class="imageLink">
+                                    <img src="evhuman/paper_logo.png">
+                                </a><br>
+                                <a href="https://arxiv.org/pdf/2412.01747" target="_blank">Paper</a>
+                            </div>
+                        </li>
+
+                        <li class="grid">
+                            <div class="griditem">
+                                <a href="#" target="_blank" class="imageLink">
+                                    <img src="evhuman/code copy.png">
+                                </a><br>
+                                <a href="#" target="_blank">Code</a>
+                            </div>
+                        </li>
+
+                        <li class="grid">
+                            <div class="griditem">
+                                <a href="#" target="_blank" class="imageLink">
+                                    <img src="evhuman/dataset_logo.png">
+                                </a><br>
+                                <a href="#" target="_blank">Dataset</a>
+                            </div>
+                        </li>
+                    </ul>
+                </center>
+            </div>
+
+                <div class="section abstract">
+                    <h2>Abstract</h2>
+                    <p>
+                        This paper addresses the challenges of estimating a continuous-time human motion field from a stream of events. 
+                        Existing Human Mesh Recovery (HMR) methods rely predominantly on frame-based approaches, which are prone to 
+                        aliasing and inaccuracies due to limited temporal resolution and motion blur. In this work, we predict a 
+                        continuous-time human motion field directly from events by leveraging a recurrent feed-forward neural network 
+                        to predict human motion in the latent space of possible human motions.
+                    </p>
+                    <p>
+                        Prior state-of-the-art event-based methods rely on computationally intensive optimization across a fixed 
+                        number of poses at high frame rates, which becomes prohibitively expensive as we increase the temporal resolution. 
+                        In comparison, we present the first work that replaces traditional discrete-time predictions with a continuous 
+                        human motion field represented as a time-implicit function, enabling parallel pose queries at arbitrary temporal resolutions.
+                    </p>
+                    <p>
+                        Despite the promises of event cameras, few benchmarks have tested the limit of high-speed human motion estimation. 
+                        We introduce Beam-splitter Event Agile Human Motion Dataset—a hardware-synchronized high-speed human dataset to fill this gap. 
+                        On this new data, our method improves joint errors by 23.8% compared to previous event human methods while reducing 
+                        the computational time by 69%.
+                    </p>
+                </div>
+
+                <div class="section abstract">
+                    <h2>Supplemental Video</h2>
+                    <div class="section teaser">
+                        <div class="responsive-iframe">
+                            <iframe src="https://www.youtube.com/embed/78SL-113Sts" title="Continuous-Time Human Motion Field from Events" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section abstract">
+                    <h2>Qualitative Results</h2>
+                    <div class="section teaser">
+                        <img src="evhuman/images/qual.png" width="100%">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <hr class="smooth">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html> 
