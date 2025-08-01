@@ -272,3 +272,138 @@ div[style*="text-align: left"] {
   border-left: 3px solid #e0e0e0;
   margin: 20px 0;
 }
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+  
+  h2 {
+    font-size: 18px;
+  }
+  
+  .papertitle {
+    font-size: 14px;
+  }
+  
+  .name {
+    font-size: 20px !important;
+  }
+  
+  /* Force the name to be 20px in mobile */
+  p.name {
+    font-size: 20px !important;
+  }
+  
+  /* Target the name in the first table specifically */
+  table:first-of-type tr:first-child td:first-child p.name {
+    font-size: 20px !important;
+  }
+  
+  /* Target the name with the most specific selector */
+  table:first-of-type tr:first-child td[style*="width:63%"] p.name {
+    font-size: 20px !important;
+  }
+  
+  table {
+    margin-bottom: 20px;
+  }
+  
+  tr td[style*="width:25%"] {
+    width: 50% !important;
+  }
+  
+  tr td[style*="width:75%"] {
+    width: 50% !important;
+  }
+  
+  /* Make news section narrower on mobile */
+  table:last-of-type tr td[style*="width:100%"] {
+    padding: 10px 15px !important;
+  }
+  
+  /* Adjust news section content width */
+  table:last-of-type tr td[style*="width:100%"] div[style*="text-align: left"] {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  /* Make bio paragraph smaller in mobile */
+  tr:first-child td[style*="width:75%"] p {
+    font-size: 12px !important;
+  }
+  
+  /* Target the bio paragraph more specifically */
+  table:first-of-type tr:first-child td[style*="width:63%"] p {
+    font-size: 12px !important;
+  }
+  
+  /* Make announcement text smaller in mobile */
+  table:last-of-type tr td[style*="width:100%"] p {
+    font-size: 12px !important;
+  }
+  
+  /* Make announcement div content smaller in mobile */
+  table:last-of-type tr td[style*="width:100%"] div[style*="text-align: left"] p {
+    font-size: 12px !important;
+  }
+  
+  /* Make news & updates list items smaller in mobile */
+  table:last-of-type tr td[style*="width:100%"] ul li {
+    font-size: 12px !important;
+  }
+  
+  /* Target announcements section specifically */
+  table:nth-of-type(2) tr td[style*="width:100%"] p {
+    font-size: 12px !important;
+  }
+  
+  /* Target news section specifically */
+  table:nth-of-type(2) tr:nth-child(2) td[style*="width:100%"] ul li {
+    font-size: 12px !important;
+  }
+  
+  /* Target all paragraphs in the second table (announcements and news) */
+  table:nth-of-type(2) td p {
+    font-size: 12px !important;
+  }
+  
+  /* Target News & Updates section specifically */
+  table:nth-of-type(2) tr:nth-child(2) td {
+    font-size: 12px !important;
+  }
+  
+  /* Target all content in News & Updates section */
+  table:nth-of-type(2) tr:nth-child(2) td * {
+    font-size: 12px !important;
+  }
+  
+  /* Override for News & Updates header specifically */
+  table:nth-of-type(2) tr:nth-child(2) td h2 {
+    font-size: 18px !important;
+  }
+  
+  /* Fix bullet points overflow in mobile */
+  table:nth-of-type(2) tr:nth-child(2) td ul {
+    padding-left: 20px;
+    margin-left: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure list items don't overflow */
+  table:nth-of-type(2) tr:nth-child(2) td ul li {
+    padding-left: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Force the news section cell to have proper padding */
+  table:nth-of-type(2) tr:nth-child(2) td {
+    padding: 10px 15px !important;
+    box-sizing: border-box;
+  }
+}
