@@ -2,6 +2,8 @@
   --theme-color: #8C1515;
   --theme-color-light: rgba(140, 21, 21, 0.1);
   --theme-color-light-hover: rgba(140, 21, 21, 0.2);
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Segoe UI", sans-serif;
 }
 
 /* latin-ext */
@@ -85,14 +87,19 @@ td,
 th,
 tr,
 p {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
   color: #000;
 }
 
+.page-container {
+  width: 60%;
+  max-width: 1200px;
+}
+
 strong {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
 }
 
@@ -103,13 +110,13 @@ strong {
 h2 {
   margin: 0;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-display);
   font-size: 28px;
   color: var(--theme-color);
 }
 
 .papertitle {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 700;
   color: var(--theme-color);
@@ -118,7 +125,7 @@ h2 {
 .name {
   padding-top: 20px;
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-display);
   font-size: 36px;
   color: var(--theme-color);
 }
@@ -159,7 +166,7 @@ table {
 h2 {
   margin: 40px 0 20px 0;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-display);
   font-size: 28px;
   color: var(--theme-color);
   padding-bottom: 10px;
@@ -176,62 +183,51 @@ ul li {
   padding: 8px 0;
 }
 
-/* Paper entries with vertical bars for grouping */
-table:last-of-type tr {
-  border-left: 3px solid #e0e0e0;
-  margin: 10px 0;
-  padding-left: 15px;
+.news-list li {
+  margin-bottom: 0;
+  padding: 0;
 }
 
-/* Author names styling */
-table:last-of-type tr td[style*="width:75%"] strong,
-table:last-of-type tr td[style*="width:75%"] a:not([href]) {
+/* Research project entries */
+.research-list > tbody > tr {
+  border-left: 3px solid #e0e0e0;
+}
+
+.research-list td:nth-child(2) {
   font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
   color: #666;
   font-size: 12px;
-  font-weight: bold !important;
 }
 
-/* Project links styling */
-table:last-of-type tr td[style*="width:75%"] a[href] {
-  font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+.research-list .author,
+.research-list td:nth-child(2) strong {
+  color: #666;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.research-list td:nth-child(2) a[href] {
   color: var(--theme-color);
   font-size: 12px;
   background-color: var(--theme-color-light);
   padding: 2px 4px;
   border-radius: 2px;
-  text-decoration: none;
   transition: background-color 0.2s ease;
 }
 
-table:last-of-type tr td[style*="width:75%"] a[href]:hover {
+.research-list td:nth-child(2) a[href]:hover {
   background-color: var(--theme-color-light-hover);
 }
 
-/* Venue names and other project text styling */
-table:last-of-type tr td[style*="width:75%"] br + a,
-table:last-of-type tr td[style*="width:75%"] br + a + br + a,
-table:last-of-type tr td[style*="width:75%"] br + br + a,
-table:last-of-type tr td[style*="width:75%"] p,
-table:last-of-type tr td[style*="width:75%"] br + br + br + a {
-  font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+.research-list td:nth-child(2) p {
   color: #666;
   font-size: 12px;
 }
 
-/* Target venue text specifically */
-table:last-of-type tr td[style*="width:75%"] {
-  font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
-  color: #666;
-  font-size: 12px;
-}
-
-/* Ensure strong tags in paper entries are bold */
-table:last-of-type tr td[style*="width:75%"] strong {
-  font-weight: bold !important;
-  font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
-  color: #666 !important;
-  font-size: 12px !important;
+.research-list td:first-child img,
+.research-list td:first-child video {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Force all strong elements to be bold */
@@ -239,33 +235,25 @@ strong {
   font-weight: bold !important;
 }
 
-/* Specific styling for author names */
-.author-name {
-  font-weight: bold !important;
-  font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace !important;
-  color: #666 !important;
-  font-size: 12px !important;
-}
-
 /* Underline for Ziyun Wang name */
-table:last-of-type tr td[style*="width:75%"] strong {
+.research-list td:nth-child(2) strong {
   text-decoration: underline;
 }
 
-/* Override paper title styling */
-table:last-of-type tr td[style*="width:75%"] .papertitle {
-  font-family: 'Inter', sans-serif;
+/* Project titles */
+.research-list .papertitle {
+  font-family: var(--font-display);
   color: var(--theme-color);
 }
 
 /* Profile section enhancement */
-tr:first-child {
+.profile-table tr:first-child {
   background-color: white;
   border-radius: 4px 4px 0 0;
 }
 
 /* Recruitment section styling */
-div[style*="text-align: left"] {
+.recruitment-details {
   background-color: white;
   padding: 20px;
   border-radius: 4px;
@@ -275,163 +263,105 @@ div[style*="text-align: left"] {
 
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
+  .page-container {
+    width: calc(100% - 24px) !important;
+  }
+
   body {
     font-size: 14px;
   }
-  
+
   h2 {
     font-size: 20px;
   }
-  
+
   .papertitle {
     font-size: 16px;
   }
-  
-  .name {
-    font-size: 26px !important;
-  }
-  
-  /* Force the name to be 26px in mobile */
+
   p.name {
     font-size: 26px !important;
   }
-  
-  /* Target the name in the first table specifically */
-  table:first-of-type tr:first-child td:first-child p.name {
-    font-size: 26px !important;
-  }
-  
-  /* Target the name with the most specific selector */
-  table:first-of-type tr:first-child td[style*="width:63%"] p.name {
-    font-size: 26px !important;
-  }
-  
+
   table {
     margin-bottom: 20px;
   }
-  
-  tr td[style*="width:25%"] {
-    width: 50% !important;
+
+  .profile-table td:first-child {
+    display: block;
+    width: 100% !important;
   }
-  
-  tr td[style*="width:75%"] {
-    width: 50% !important;
+
+  .profile-table td:last-child {
+    display: none;
   }
-  
-  /* Make news section narrower on mobile */
-  table:last-of-type tr td[style*="width:100%"] {
+
+  .profile-table td:first-child::before {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    background: url('headshot/Faculty_Headshot.JPG') center / cover no-repeat;
+    border-radius: 50%;
+  }
+
+  .profile-table p,
+  .info-table p,
+  .info-table li {
+    font-size: 14px !important;
+  }
+
+  .info-table td {
     padding: 10px 15px !important;
+    box-sizing: border-box;
   }
-  
-  /* Adjust news section content width */
-  table:last-of-type tr td[style*="width:100%"] div[style*="text-align: left"] {
-    max-width: 90%;
-    margin: 0 auto;
+
+  .news-row h2 {
+    font-size: 18px;
   }
-  
-  /* Make bio paragraph smaller in mobile */
-  tr:first-child td[style*="width:75%"] p {
-    font-size: 14px !important;
-  }
-  
-  /* Target the bio paragraph more specifically */
-  table:first-of-type tr:first-child td[style*="width:63%"] p {
-    font-size: 14px !important;
-  }
-  
-  /* Make announcement text smaller in mobile */
-  table:last-of-type tr td[style*="width:100%"] p {
-    font-size: 14px !important;
-  }
-  
-  /* Make announcement div content smaller in mobile */
-  table:last-of-type tr td[style*="width:100%"] div[style*="text-align: left"] p {
-    font-size: 14px !important;
-  }
-  
-  /* Make news & updates list items smaller in mobile */
-  table:last-of-type tr td[style*="width:100%"] ul li {
-    font-size: 14px !important;
-  }
-  
-  /* Target announcements section specifically */
-  table:nth-of-type(2) tr td[style*="width:100%"] p {
-    font-size: 14px !important;
-  }
-  
-  /* Target news section specifically */
-  table:nth-of-type(2) tr:nth-child(2) td[style*="width:100%"] ul li {
-    font-size: 14px !important;
-  }
-  
-  /* Target all paragraphs in the second table (announcements and news) */
-  table:nth-of-type(2) td p {
-    font-size: 14px !important;
-  }
-  
-  /* Target News & Updates section specifically */
-  table:nth-of-type(2) tr:nth-child(2) td {
-    font-size: 12px !important;
-  }
-  
-  /* Target all content in News & Updates section */
-  table:nth-of-type(2) tr:nth-child(2) td * {
-    font-size: 14px !important;
-  }
-  
-  /* Override for News & Updates header specifically */
-  table:nth-of-type(2) tr:nth-child(2) td h2 {
-    font-size: 18px !important;
-  }
-  
-  /* Fix bullet points overflow in mobile */
-  table:nth-of-type(2) tr:nth-child(2) td ul {
-    padding-left: 20px;
-    margin-left: 0;
+
+  .news-list {
     width: 100%;
+    padding-left: 20px;
     box-sizing: border-box;
   }
-  
-  /* Ensure list items don't overflow */
-  table:nth-of-type(2) tr:nth-child(2) td ul li {
-    padding-left: 10px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
+
+  .news-list li {
+    overflow-wrap: anywhere;
+  }
+
+  .recruitment-details {
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .research-list,
+  .research-list tbody,
+  .research-list tr,
+  .research-list td {
+    display: block;
+    width: 100% !important;
     box-sizing: border-box;
   }
-  
-  /* Force the news section cell to have proper padding */
-  table:nth-of-type(2) tr:nth-child(2) td {
-    padding: 10px 15px !important;
-    box-sizing: border-box;
+
+  .research-list > tbody > tr {
+    border-left: 0;
+    border-top: 3px solid #e0e0e0;
+    padding: 20px 0;
   }
-  
-  /* Mobile layout restructuring for bio section */
-  @media (max-width: 768px) {
-    /* Make bio section full width */
-    table:first-of-type tr:first-child td[style*="width:63%"] {
-      width: 100% !important;
-      display: block !important;
-    }
-    
-    /* Hide the image cell in mobile */
-    table:first-of-type tr:first-child td[style*="width:40%"] {
-      display: none !important;
-    }
-    
-    /* Add the image above the name in mobile */
-    table:first-of-type tr:first-child td[style*="width:63%"]::before {
-      content: "";
-      display: block;
-      width: 200px;
-      height: 200px;
-      margin: 0 auto 20px auto;
-      background-image: url('headshot/Faculty_Headshot.jpg');
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      background-repeat: no-repeat;
-    }
+
+  .research-list td:first-child {
+    padding: 0 20px 15px !important;
+    text-align: center;
+  }
+
+  .research-list td:first-child > div {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .research-list td:nth-child(2) {
+    padding: 0 20px !important;
   }
 }
