@@ -70,7 +70,12 @@
             <tr>
               <td style="padding: 10px; width: 100%; vertical-align: middle;">
                 <h2>News & Updates</h2>
-                <ul></ul>
+                <ul>
+                  <li>[07/13/2026] I co-organized the <strong>Telluride Neuromorphic AI Workshop</strong>.</li>
+                  <li>[07/13/2026] I am serving as an <strong>Area Chair for WACV 2027</strong>.</li>
+                  <li>[07/13/2026] We released <a href="https://github.com/spikelab-jhu/isaac-sim-event-camera-plugin"><strong>Isaac Sim Event Simulator v1.0</strong></a>, a physics-grounded, high-rate event camera plugin for NVIDIA Isaac Sim!</li>
+                  <li>[07/13/2026] Our paper <a href="https://github.com/spikelab-jhu/Match-Any-Events"><strong>"Match-Any-Events"</strong></a> has been accepted to <strong>ECCV 2026</strong>! The first generalizable matching model with events.</li>
+                  <li>[03/2026] Our ICRA 2026 workshop, <a href="https://nfr-icra2026.com/"><strong>"Challenges and Opportunities of Neuromorphic Field Robotics and Automation"</strong></a>, has been accepted and will take place on June 5 in Vienna!</li>
                   <li>[11/12/2025] I gave a talk at <strong>Worcester Polytechnic Institute</strong>.</li>
                   <li>[11/06/2025] I served as a panelist at the <strong>Physical Intelligence Initiative (PI&sup2;) Workshop</strong>, <strong>University of Delaware</strong>.</li>
                    <!-- <li>[01/22/2025] I g!</li> -->
@@ -117,6 +122,87 @@
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one" onmouseout="evis_stop()" onmouseover="evis_start()">
+              <div class="two" id="evis_demo" style="opacity: 0; display: flex; align-items: center;">
+                <img src="images/isaac-sim-event-camera-plugin/franka_trailer.gif" width="160" alt="Isaac Sim event camera wrist-camera demo on a Franka robot arm">
+              </div>
+              <img src="images/isaac-sim-event-camera-plugin/event_cam_gui.png" width="160" height="160" style="object-fit: cover;" alt="Isaac Sim event camera live-preview interface">
+            </div>
+            <script>
+              function evis_start() {
+                document.getElementById('evis_demo').style.opacity = "1";
+              }
+
+              function evis_stop() {
+                document.getElementById('evis_demo').style.opacity = "0";
+              }
+              evis_stop();
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://github.com/spikelab-jhu/isaac-sim-event-camera-plugin">
+              <span class="papertitle">EVIS: A Physics-Grounded Event Camera Plugin for NVIDIA Isaac Sim</span>
+            </a>
+            <br>
+            <a href="https://indexss.github.io/">Linli Shi</a>,
+            <a>Ruijun (Rex) Zhang</a>,
+            <strong>Ziyun Wang</strong>
+            <br>
+            Open-source software, 2026
+            <br>
+            <a href="https://github.com/spikelab-jhu/isaac-sim-event-camera-plugin">Code</a> /
+            <a href="https://arxiv.org/abs/2607.08098">Technical report</a>
+            <p></p>
+            <p>
+              High-rate event camera simulation accelerated by motion-vector frame interpolation, with HDR support, sensor noise models, motion blur, and tools for downstream training.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one" onmouseout="match_any_events_stop()" onmouseover="match_any_events_start()">
+              <div class="two" id="match_any_events_demo" style="opacity: 0; display: flex; align-items: center;">
+                <video width="160" autoplay loop muted playsinline poster="images/match-any-events/teaser.png" aria-label="Real-time Match-Any-Events feature matching demo">
+                  <source src="images/match-any-events/realtime_demo.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div style="width:160px;height:160px;display:flex;align-items:center;">
+                <img src="images/match-any-events/teaser.png" width="160" alt="Match-Any-Events feature matching across event-camera views">
+              </div>
+            </div>
+            <script>
+              function match_any_events_start() {
+                document.getElementById('match_any_events_demo').style.opacity = "1";
+              }
+
+              function match_any_events_stop() {
+                document.getElementById('match_any_events_demo').style.opacity = "0";
+              }
+              match_any_events_stop();
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://github.com/spikelab-jhu/Match-Any-Events">
+              <span class="papertitle">Match-Any-Events: Zero-Shot Motion-Robust Feature Matching Across Wide Baselines for Event Cameras</span>
+            </a>
+            <br>
+            <a>Ruijun (Rex) Zhang</a>,
+            <a>Hang Su</a>,
+            <a href="https://www.cis.upenn.edu/~kostas/">Kostas Daniilidis</a>,
+            <strong>Ziyun Wang</strong>
+            <br>
+            European Conference on Computer Vision (ECCV), 2026
+            <br>
+            <a href="https://github.com/spikelab-jhu/Match-Any-Events">Code</a> /
+            <a href="https://arxiv.org/abs/2604.18744">Paper</a>
+            <p></p>
+            <p>
+              A zero-shot event feature matcher designed for large viewpoint changes and motion distortions, supporting event-to-event and cross-modal matching.
+            </p>
+          </td>
+        </tr>
         <tr>
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div>
