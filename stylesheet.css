@@ -280,7 +280,8 @@ strong {
   }
 
   p.name {
-    font-size: 26px !important;
+    font-size: clamp(30px, 9vw, 36px) !important;
+    line-height: 1.15;
   }
 
   table {
