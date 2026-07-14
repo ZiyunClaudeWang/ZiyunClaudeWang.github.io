@@ -93,6 +93,11 @@ p {
   color: #000;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 .page-container {
   width: 60%;
   max-width: 1200px;
@@ -279,8 +284,9 @@ strong {
     font-size: 16px;
   }
 
-  p.name {
-    font-size: clamp(36px, 11vw, 44px) !important;
+  .profile-table p.name,
+  .profile-table p.name strong {
+    font-size: 26px !important;
     line-height: 1.15;
   }
 
