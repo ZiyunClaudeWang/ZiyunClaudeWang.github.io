@@ -280,7 +280,7 @@ strong {
   }
 
   p.name {
-    font-size: clamp(30px, 9vw, 36px) !important;
+    font-size: clamp(36px, 11vw, 44px) !important;
     line-height: 1.15;
   }
 
@@ -307,7 +307,7 @@ strong {
     border-radius: 50%;
   }
 
-  .profile-table p,
+  .profile-table p:not(.name),
   .info-table p,
   .info-table li {
     font-size: 14px !important;
