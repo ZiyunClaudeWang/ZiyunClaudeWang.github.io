@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Continuous-Time Human Motion Field from Events</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Continuous-Time Human Motion Field from Events">
+    <meta property="og:url" content="https://ziyunclaudewang.github.io/evhuman/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ziyunclaudewang.github.io/evhuman/images/qual.png">
+    <link rel="author" href="https://ziyunclaudewang.github.io">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TYPQ2VXYS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-5TYPQ2VXYS');
+    </script>
+</head>
+
+<body style="padding: 5%; padding-top: min(15px, 5%); padding-bottom: min(5px, 5%); width: 100%">
+    <div class="container-lg text-center" style="max-width: 1500px; margin: auto;" id="main">
+        <header role="banner">
+            <div class="row">
+                <h2 class="col-md-12 text-center">
+                    Continuous-Time Human Motion Field from Events<br>
+                </h2>
+                <h4 class="col-md-12 text-center mb-4">
+                </h4>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-12 text-center">
+                    <ul class="list-inline" style="margin:0px 0px 0px 0px;">
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://ziyunclaudewang.github.io/">Ziyun
+                                Wang¹𝄒²</a></li>
+                        <li><span style="font-size: calc(min(3vw, 15px))">Ruijun Zhang¹</span></li>
+                        <li><span style="font-size: calc(min(3vw, 15px))">Zi-Yan Liu¹</span></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://yufu-wang.github.io/">Yufu
+                                Wang¹</a></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://www.cis.upenn.edu/~kostas/">Kostas
+                                Daniilidis¹𝄒³</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12 text-center" style="font-size: calc(min(3vw, 15px))">
+                    <a href="https://www.cis.upenn.edu/">¹University of
+                        Pennsylvania</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.jhu.edu/">²Johns Hopkins
+                        University</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                        href="https://archimedesai.gr/">³Archimedes, Athena RC</a>
+                </div>
+                <div class="col-md-12 text-center" style="font-size: calc(min(3vw, 15px))">
+                    <b>ICCV 2025</b>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <span class="link-block" style="padding-top: 10px; padding-bottom: 10px">
+                    <a href="https://arxiv.org/abs/2412.01747" class="external-link button is-normal is-rounded is-dark"
+                        style="width: 100px; font-size: 15px">
+                        <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                    </a>
+                    <!-- TODO: placeholder repo — swap for the real one once the code is released -->
+                    <a href="#" class="external-link button is-normal is-rounded is-dark"
+                        style="width: 100px; font-size: 15px">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                    </a>
+                    <!-- TODO: point at the BEAM dataset release -->
+                    <a href="#" class="external-link button is-normal is-rounded is-dark"
+                        style="width: 110px; font-size: 15px">
+                        <span class="icon">
+                            <i class="fas fa-database"></i>
+                        </span>
+                        <span>Dataset</span>
+                    </a>
+                </span>
+            </div>
+        </header>
+
+
+        <main role="main">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/78SL-113Sts"
+                            title="Continuous-Time Human Motion Field from Events" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2 rounded"
+                    style="text-align: center; padding-bottom: 0px; padding-top: 5px; background-color: #d0d5ec;">
+                    <h6 style="text-align: center; color:rgb(0, 0, 0)"><strong>TL;DR</strong>: A recurrent network
+                        predicts a continuous-time human motion field directly from events, cutting joint errors by
+                        23.8% and compute by 69% compared to prior event-based methods.</h6>
+                </div>
+            </div><br><br>
+
+            <br />
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Abstract </h3>
+                    <p style="text-align: left;">
+                        This paper addresses the challenges of estimating a continuous-time human motion field from a
+                        stream of events. Existing Human Mesh Recovery (HMR) methods rely predominantly on frame-based
+                        approaches, which are prone to aliasing and inaccuracies due to limited temporal resolution and
+                        motion blur. In this work, we predict a continuous-time human motion field directly from events
+                        by leveraging a recurrent feed-forward neural network to predict human motion in the latent
+                        space of possible human motions.
+                    </p>
+                    <p style="text-align: left;">
+                        Prior state-of-the-art event-based methods rely on computationally intensive optimization across
+                        a fixed number of poses at high frame rates, which becomes prohibitively expensive as we
+                        increase the temporal resolution. In comparison, we present the first work that replaces
+                        traditional discrete-time predictions with a continuous human motion field represented as a
+                        time-implicit function, enabling parallel pose queries at arbitrary temporal resolutions.
+                    </p>
+                    <p style="text-align: left;">
+                        Despite the promises of event cameras, few benchmarks have tested the limit of high-speed human
+                        motion estimation. We introduce Beam-splitter Event Agile Human Motion Dataset—a
+                        hardware-synchronized high-speed human dataset to fill this gap. On this new data, our method
+                        improves joint errors by 23.8% compared to previous event human methods while reducing the
+                        computational time by 69%.
+                    </p>
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Qualitative results </h3>
+                    <p style="text-align: left;">
+                        Our method recovers sharp, temporally coherent human motion from events alone, and can be
+                        queried at any timestamp rather than at a fixed frame rate.
+                    </p>
+                    <img src="images/qual.png" width="100%"
+                        alt="Qualitative human mesh recovery results from event streams.">
+                </div>
+            </div><br><br>
+
+            <div class="col-md-8 offset-md-2 text-start">
+                <h4>
+                    Acknowledgements
+                </h4>
+
+                <p style="text-align: left;">
+                    We gratefully acknowledge the support of the <a href="https://www.grasp.upenn.edu/">GRASP
+                        Laboratory</a> at the University of Pennsylvania.
+                    <br><br><br>
+                </p>
+            </div>
+
+            <section class="section" id="BibTeX">
+                <div class="col-md-8 offset-md-2 text-start">
+                    <h2 class="title" style="text-align: center;">BibTeX</h2>
+                    <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; text-align: left;"><code>@inproceedings{wang2025continuous,
+title={{Continuous-Time Human Motion Field from Events}},
+author={Wang, Ziyun and Zhang, Ruijun and Liu, Zi-Yan and Wang, Yufu and Daniilidis, Kostas},
+booktitle={International Conference on Computer Vision (ICCV)},
+year={2025}
+}</code></pre>
+                </div>
+            </section>
+
+            <br><br>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>EV-Catcher: High-Speed Object Catching Using Low-latency Event-based Neural Networks</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title"
+        content="EV-Catcher: High-Speed Object Catching Using Low-latency Event-based Neural Networks">
+    <meta property="og:url" content="https://ziyunclaudewang.github.io/ev-catcher/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ziyunclaudewang.github.io/ev-catcher/images/system.png">
+    <link rel="author" href="https://ziyunclaudewang.github.io">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TYPQ2VXYS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-5TYPQ2VXYS');
+    </script>
+</head>
+
+<body style="padding: 5%; padding-top: min(15px, 5%); padding-bottom: min(5px, 5%); width: 100%">
+    <div class="container-lg text-center" style="max-width: 1500px; margin: auto;" id="main">
+        <header role="banner">
+            <div class="row">
+                <h2 class="col-md-12 text-center">
+                    <b>EV-Catcher:</b> High-Speed Object Catching Using Low-latency Event-based Neural Networks<br>
+                </h2>
+                <h4 class="col-md-12 text-center mb-4">
+                </h4>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-12 text-center">
+                    <ul class="list-inline" style="margin:0px 0px 0px 0px;">
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://ziyunclaudewang.github.io/">Ziyun
+                                Wang*¹</a></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://fcladera.com/">Fernando Cladera
+                                Ojeda*¹</a></li>
+                        <li><span style="font-size: calc(min(3vw, 15px))">Anthony Bisulco¹𝄒²</span></li>
+                        <li><span style="font-size: calc(min(3vw, 15px))">Daewon Lee²</span></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))"
+                                href="https://www.cis.upenn.edu/~cjtaylor/">Camillo J. Taylor¹</a></li><br>
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://www.cis.upenn.edu/~kostas/">Kostas
+                                Daniilidis¹</a></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://www.seas.upenn.edu/~m.hsieh/">M.
+                                Ani Hsieh¹</a></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))"
+                                href="https://tech.cornell.edu/people/daniel-d-lee-2/">Daniel D. Lee²</a></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))"
+                                href="https://www.cs.utexas.edu/~isler/">Volkan Isler²</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12 text-center" style="font-size: calc(min(3vw, 15px))">
+                    <a href="https://www.grasp.upenn.edu/">¹GRASP Laboratory, University of
+                        Pennsylvania</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;²Samsung AI Center New York
+                </div>
+                <div class="col-md-12 text-center" style="font-size: calc(min(3vw, 15px))">
+                    <b>IEEE Robotics and Automation Letters (RA-L), 2022</b>&nbsp;&nbsp;<span
+                        style="font-size: 13px;">(* equal contribution)</span>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <span class="link-block" style="padding-top: 10px; padding-bottom: 10px">
+                    <a href="https://arxiv.org/abs/2304.07200" class="external-link button is-normal is-rounded is-dark"
+                        style="width: 100px; font-size: 15px">
+                        <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                    </a>
+                    <a href="https://doi.org/10.1109/LRA.2022.3188400"
+                        class="external-link button is-normal is-rounded is-dark" style="width: 110px; font-size: 15px">
+                        <span class="icon">
+                            <i class="ai ai-ieee"></i>
+                        </span>
+                        <span>RA-L</span>
+                    </a>
+                </span>
+            </div>
+        </header>
+
+
+        <main role="main">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <video class="video" width="100%" loop playsinline autoplay muted controls>
+                        <source src="videos/ev_catcher.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2 rounded"
+                    style="text-align: center; padding-bottom: 0px; padding-top: 5px; background-color: #d0d5ec;">
+                    <h6 style="text-align: center; color:rgb(0, 0, 0)"><strong>TL;DR</strong>: A lightweight event
+                        representation and network that predict where a ping-pong ball will land in time to catch it
+                        &mdash; 81% success at speeds up to 13 m/s, running on an Nvidia Jetson NX.</h6>
+                </div>
+            </div><br><br>
+
+            <br />
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Abstract </h3>
+                    <p style="text-align: left;">
+                        Event-based sensors have recently drawn increasing interest in robotic perception due to their
+                        lower latency, higher dynamic range, and lower bandwidth requirements compared to standard
+                        CMOS-based imagers. These properties make them ideal tools for real-time perception tasks in
+                        highly dynamic environments.
+                    </p>
+                    <p style="text-align: left;">
+                        In this work, we demonstrate an application where event cameras excel: accurately estimating the
+                        impact location of fast-moving objects. We introduce a lightweight event representation called
+                        Binary Event History Image (BEHI) to encode event data at low latency, as well as a
+                        learning-based approach that allows real-time inference of a confidence-enabled control signal
+                        to the robot.
+                    </p>
+                    <p style="text-align: left;">
+                        To validate our approach, we present an experimental catching system in which we catch
+                        fast-flying ping-pong balls. We show that the system is capable of achieving a success rate of
+                        81% in catching balls targeted at different locations, with a velocity of up to 13 m/s even on
+                        compute-constrained embedded platforms such as the Nvidia Jetson NX.
+                    </p>
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> System overview </h3>
+                    <p style="text-align: left;">
+                        An event camera observes the incoming ball. The events are packaged into BEHI images and sent to
+                        the lightweight prediction network, which produces trajectory estimates with uncertainty. The
+                        robust motion estimator turns the network output into an impact location, which is passed to the
+                        motor controller commanding a linear actuator to catch the ball &mdash; all on board a Jetson NX.
+                    </p>
+                    <img src="images/system.png" width="100%"
+                        alt="EV-Catcher system: event camera to BEHI to prediction network to uncertainty-driven motion estimator to linear actuator.">
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Binary Event History Image (BEHI) </h3>
+                    <p style="text-align: left;">
+                        A BEHI marks every pixel that has fired an event up to time <i>T</i>, so it keeps a
+                        constant-sized image that preserves the trajectory of the ball. For a sensor of resolution
+                        <i>W</i>&times;<i>H</i> it costs only <i>W</i>&times;<i>H</i> bits &mdash; far cheaper than
+                        event volumes or stacks of grayscale frames, whose size grows with the number of channels or
+                        frames.
+                    </p>
+                    <img src="images/behi.png" width="100%"
+                        alt="BEHI progression of a ball flying towards the camera, sampled every 40 ms.">
+                    <p style="text-align: left; font-size: 13px;">
+                        BEHI generated from a sample trajectory. From left to right, top to bottom, the BEHI progression
+                        of a ball flying towards the camera.
+                    </p>
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Catching in action </h3>
+                    <p style="text-align: left;">
+                        A catching sequence for an example ball launch. Events are collected every 10 ms for a total of
+                        120 ms, during which the rail does not move; the actuator then travels to the predicted impact
+                        location before the ball arrives.
+                    </p>
+                    <img src="images/catching_sequence.png" width="100%"
+                        alt="Four frames of a catching sequence at 30, 120, 180 and 300 ms.">
+                </div>
+            </div><br><br>
+
+            <div class="col-md-8 offset-md-2 text-start">
+                <h4>
+                    Acknowledgements
+                </h4>
+
+                <p style="text-align: left;">
+                    We gratefully acknowledge the support of the <a href="https://www.grasp.upenn.edu/">GRASP
+                        Laboratory</a> at the University of Pennsylvania and the Samsung AI Center New York.
+                    <br><br><br>
+                </p>
+            </div>
+
+            <section class="section" id="BibTeX">
+                <div class="col-md-8 offset-md-2 text-start">
+                    <h2 class="title" style="text-align: center;">BibTeX</h2>
+                    <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; text-align: left;"><code>@article{wang2022evcatcher,
+title={{EV-Catcher: High-Speed Object Catching Using Low-latency Event-based Neural Networks}},
+author={Wang, Ziyun and Cladera Ojeda, Fernando and Bisulco, Anthony and Lee, Daewon
+     and Taylor, Camillo J. and Daniilidis, Kostas and Hsieh, M. Ani
+     and Lee, Daniel D. and Isler, Volkan},
+journal={IEEE Robotics and Automation Letters},
+volume={7},
+number={4},
+pages={8737--8744},
+year={2022},
+doi={10.1109/LRA.2022.3188400}
+}</code></pre>
+                </div>
+            </section>
+
+            <br><br>
+        </main>
+    </div>
+</body>
+
+</html>

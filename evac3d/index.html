@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>EvAC3D: From Event-based Apparent Contours to 3D Models via Continuous Visual Hulls</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title"
+        content="EvAC3D: From Event-based Apparent Contours to 3D Models via Continuous Visual Hulls">
+    <meta property="og:url" content="https://ziyunclaudewang.github.io/evac3d/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ziyunclaudewang.github.io/evac3d/images/pipeline.png">
+    <link rel="author" href="https://ziyunclaudewang.github.io">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TYPQ2VXYS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-5TYPQ2VXYS');
+    </script>
+</head>
+
+<body style="padding: 5%; padding-top: min(15px, 5%); padding-bottom: min(5px, 5%); width: 100%">
+    <div class="container-lg text-center" style="max-width: 1500px; margin: auto;" id="main">
+        <header role="banner">
+            <div class="row">
+                <h2 class="col-md-12 text-center">
+                    <b>EvAC3D:</b> From Event-based Apparent Contours to 3D Models via Continuous Visual Hulls<br>
+                </h2>
+                <h4 class="col-md-12 text-center mb-4">
+                </h4>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-12 text-center">
+                    <ul class="list-inline" style="margin:0px 0px 0px 0px;">
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://ziyunclaudewang.github.io/">Ziyun
+                                Wang*¹</a></li>
+                        <li><span style="font-size: calc(min(3vw, 15px))">Kenneth Chaney*¹</span></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://www.cis.upenn.edu/~kostas/">Kostas
+                                Daniilidis¹</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12 text-center" style="font-size: calc(min(3vw, 15px))">
+                    <a href="https://www.cis.upenn.edu/">¹University of Pennsylvania</a>
+                </div>
+                <div class="col-md-12 text-center" style="font-size: calc(min(3vw, 15px))">
+                    <b>ECCV 2022</b>&nbsp;&nbsp;<span style="font-size: 13px;">(* equal contribution)</span>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <span class="link-block" style="padding-top: 10px; padding-bottom: 10px">
+                    <a href="https://arxiv.org/abs/2304.05296" class="external-link button is-normal is-rounded is-dark"
+                        style="width: 100px; font-size: 15px">
+                        <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                    </a>
+                    <a href="https://github.com/daniilidis-group/EvAC3D"
+                        class="external-link button is-normal is-rounded is-dark" style="width: 100px; font-size: 15px">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1kpULxF57NeqdEAv8dyFgSJKxA6STuwLm?usp=drive_link"
+                        class="external-link button is-normal is-rounded is-dark" style="width: 110px; font-size: 15px">
+                        <span class="icon">
+                            <i class="fas fa-database"></i>
+                        </span>
+                        <span>Dataset</span>
+                    </a>
+                </span>
+            </div>
+        </header>
+
+
+        <main role="main">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/_-6svFfjSOw"
+                            title="EvAC3D: From Event-based Apparent Contours to 3D Models via Continuous Visual Hulls"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2 rounded"
+                    style="text-align: center; padding-bottom: 0px; padding-top: 5px; background-color: #d0d5ec;">
+                    <h6 style="text-align: center; color:rgb(0, 0, 0)"><strong>TL;DR</strong>: We reconstruct
+                        high-fidelity 3D meshes from events alone, by learning Apparent Contour Events and carving a
+                        continuous visual hull that can be refined one event at a time.</h6>
+                </div>
+            </div><br><br>
+
+            <br />
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Abstract </h3>
+                    <p style="text-align: left;">
+                        3D reconstruction from multiple views is a successful computer vision field with multiple
+                        deployments in applications. State of the art is based on traditional RGB frames that enable
+                        optimization of photo-consistency cross views. In this paper, we study the problem of 3D
+                        reconstruction from event-cameras, motivated by the advantages of event-based cameras in terms
+                        of low power and latency as well as by the biological evidence that eyes in nature capture the
+                        same data and still perceive well 3D shape.
+                    </p>
+                    <p style="text-align: left;">
+                        The foundation of our hypothesis that 3D reconstruction is feasible using events lies in the
+                        information contained in the occluding contours and in the continuous scene acquisition with
+                        events. We propose Apparent Contour Events (ACE), a novel event-based representation that
+                        defines the geometry of the apparent contour of an object. We represent ACE by a spatially and
+                        temporally continuous implicit function defined in the event x-y-t space. Furthermore, we design
+                        a novel continuous Voxel Carving algorithm enabled by the high temporal resolution of the
+                        Apparent Contour Events.
+                    </p>
+                    <p style="text-align: left;">
+                        To evaluate the performance of the method, we collect MOEC-3D, a 3D event dataset of a set of
+                        common real-world objects. We demonstrate the ability of EvAC3D to reconstruct high-fidelity
+                        mesh surfaces from real event sequences while allowing the refinement of the 3D reconstruction
+                        for each individual event.
+                    </p>
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Method overview </h3>
+                    <p style="text-align: left;">
+                        A hypernetwork encodes the previous events into the weights of a per-event classifier, which
+                        labels each incoming event as an Apparent Contour Event or not. The predicted ACEs drive
+                        geometric volume carving, and the resulting vacancy volume is converted to a mesh with marching
+                        cubes and then refined by ACE consistency optimization.
+                    </p>
+                    <img src="images/pipeline.png" width="100%"
+                        alt="EvAC3D pipeline: a hypernetwork-conditioned ACE classification network drives continuous volume carving, marching cubes and ACE consistency optimization.">
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Apparent Contour Events (ACE) </h3>
+                    <p style="text-align: left;">
+                        The main challenge in reconstructing objects from events is finding the appropriate geometric
+                        quantities that can be used for surface reconstruction. In frame-based reconstruction
+                        algorithms, silhouettes are used to encode the rays from the camera center to the object.
+                        However, computing silhouettes requires integrating frame-based representations, which limits
+                        the temporal resolution of the reconstruction updates. Additionally, since events represent the
+                        change in log of light intensity, events are only observed where the image gradients are
+                        nonzero, so one would not observe enough events on a smooth object surface. These two facts
+                        combined make traditional silhouettes non-ideal for events. To address these two shortcomings,
+                        we introduce Apparent Contour Events (ACE), a novel representation that encodes the object
+                        geometry while preserving the high temporal resolution of the events.
+                    </p>
+
+                    <h3> Event-based visual hull </h3>
+                    <p style="text-align: left;">
+                        Continuous volume carving provides smooth, continuous incremental changes to the carving volume.
+                        This is accomplished by only carving updates through the use of ACEs. ACEs are defined by the
+                        tangent rays to the surface at any given positional location. The time resolution of event-based
+                        cameras provides ACEs from continuous viewpoints along the trajectory of the camera.
+                    </p>
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> MOEC-3D dataset </h3>
+                    <p style="text-align: left;">
+                        We collect the Multi Object Event Camera dataset in 3D (MOEC-3D), a 3D event dataset of real
+                        objects. For ground truth models, an industrial-level Artec Spider scanner is used to provide
+                        highly accurate 3D models. The detailed steps of data collection can be found in the
+                        Supplementary Material. Here are some examples of the scanned objects:
+                    </p>
+                    <img src="images/moec3d_objects.png" width="100%"
+                        alt="Six real-world objects scanned for the MOEC-3D dataset.">
+                </div>
+            </div><br><br>
+
+            <div class="col-md-8 offset-md-2 text-start">
+                <h4>
+                    Acknowledgements
+                </h4>
+
+                <p style="text-align: left;">
+                    We gratefully acknowledge the support of the <a href="https://www.grasp.upenn.edu/">GRASP
+                        Laboratory</a> at the University of Pennsylvania.
+                    <br><br><br>
+                </p>
+            </div>
+
+            <section class="section" id="BibTeX">
+                <div class="col-md-8 offset-md-2 text-start">
+                    <h2 class="title" style="text-align: center;">BibTeX</h2>
+                    <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; text-align: left;"><code>@inproceedings{wang2022evac3d,
+title={{EvAC3D: From Event-based Apparent Contours to 3D Models via Continuous Visual Hulls}},
+author={Wang, Ziyun and Chaney, Kenneth and Daniilidis, Kostas},
+booktitle={European Conference on Computer Vision (ECCV)},
+year={2022}
+}</code></pre>
+                </div>
+            </section>
+
+            <br><br>
+        </main>
+    </div>
+</body>
+
+</html>

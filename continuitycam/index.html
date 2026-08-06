@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>ContinuityCam: Event-based Continuous Color Video Decompression from Single Frames</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Event-based Continuous Color Video Decompression from Single Frames">
+    <meta property="og:url" content="https://ziyunclaudewang.github.io/continuitycam/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ziyunclaudewang.github.io/continuitycam/images/pipeline.png">
+    <link rel="author" href="https://ziyunclaudewang.github.io">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TYPQ2VXYS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-5TYPQ2VXYS');
+    </script>
+</head>
+
+<body style="padding: 5%; padding-top: min(15px, 5%); padding-bottom: min(5px, 5%); width: 100%">
+    <div class="container-lg text-center" style="max-width: 1500px; margin: auto;" id="main">
+        <header role="banner">
+            <div class="row">
+                <h2 class="col-md-12 text-center">
+                    <b>ContinuityCam:</b> Event-based Continuous Color Video Decompression from Single Frames<br>
+                </h2>
+                <h4 class="col-md-12 text-center mb-4">
+                </h4>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-12 text-center">
+                    <ul class="list-inline" style="margin:0px 0px 0px 0px;">
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://ziyunclaudewang.github.io/">Ziyun
+                                Wang¹</a></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))"
+                                href="https://friedhelmhamann.github.io/">Friedhelm Hamann²</a></li>
+                        <li><span style="font-size: calc(min(3vw, 15px))">Kenneth Chaney¹</span></li>
+                        <li><span style="font-size: calc(min(3vw, 15px))">Wen Jiang¹</span></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))"
+                                href="https://sites.google.com/view/guillermogallego">Guillermo Gallego²</a></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://www.cis.upenn.edu/~kostas/">Kostas
+                                Daniilidis¹𝄒³</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12 text-center" style="font-size: calc(min(3vw, 15px))">
+                    <a href="https://www.cis.upenn.edu/">¹University of Pennsylvania</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                        href="https://www.tu.berlin/en/">²TU Berlin</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                        href="https://archimedesai.gr/">³Archimedes, Athena RC</a>
+                </div>
+                <div class="col-md-12 text-center" style="font-size: calc(min(3vw, 15px))">
+                    <b>CVPR Event-based Vision Workshop, 2025</b>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <span class="link-block" style="padding-top: 10px; padding-bottom: 10px">
+                    <a href="https://arxiv.org/abs/2312.00113" class="external-link button is-normal is-rounded is-dark"
+                        style="width: 100px; font-size: 15px">
+                        <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                    </a>
+                </span>
+            </div>
+        </header>
+
+
+        <main role="main">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/-hdZdOGAeuY"
+                            title="Event-based Continuous Color Video Decompression from Single Frames"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2 rounded"
+                    style="text-align: center; padding-bottom: 0px; padding-top: 5px; background-color: #d0d5ec;">
+                    <h6 style="text-align: center; color:rgb(0, 0, 0)"><strong>TL;DR</strong>: One static color frame
+                        plus events becomes a temporally continuous video, queryable at any time between the events.
+                    </h6>
+                </div>
+            </div><br><br>
+
+            <br />
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Abstract </h3>
+                    <p style="text-align: left;">
+                        We present ContinuityCam, a novel approach to generate a continuous video from a single static
+                        RGB image, using an event camera. Conventional cameras struggle with high-speed motion capture
+                        due to bandwidth and dynamic range limitations. Event cameras are ideal sensors to solve this
+                        problem because they encode compressed change information at high temporal resolution. In this
+                        work, we propose a novel task called <b>event-based continuous color video decompression</b>,
+                        pairing single static color frames and events to reconstruct temporally continuous videos.
+                    </p>
+                    <p style="text-align: left;">
+                        Our approach combines continuous long-range motion modeling with a feature-plane-based synthesis
+                        neural integration model, enabling frame prediction at arbitrary times within the events. Our
+                        method does not rely on additional frames except for the initial image, increasing, thus, the
+                        robustness to sudden light changes, minimizing the prediction latency, and decreasing the
+                        bandwidth requirement.
+                    </p>
+                    <p style="text-align: left;">
+                        We introduce a novel single objective beamsplitter setup that acquires aligned images and events
+                        and a novel and challenging <b>Event Extreme Decompression Dataset (E2D2)</b> that tests the
+                        method in various lighting and motion profiles. We thoroughly evaluate our method through
+                        benchmarking reconstruction as well as various downstream tasks. Our approach significantly
+                        outperforms the event- and image-based baselines in the proposed task.
+                    </p>
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> How it works </h3>
+                    <p style="text-align: left;">
+                        A motion network turns the event volume into dense trajectories via a learned motion basis,
+                        which are sampled at a query time <i>t</i> to give a splat flow field. Softmax splatting warps
+                        the feature and image pyramids of the initial frame along that field, while a feature network
+                        builds multiscale tri-plane features that a lightweight decoder samples at (x, y, t). Multiscale
+                        fusion combines both branches into the image at time <i>t</i>.
+                    </p>
+                    <img src="images/pipeline.png" width="100%"
+                        alt="ContinuityCam pipeline: motion network and learned motion basis produce dense trajectories, softmax splatting warps image and feature pyramids, and tri-plane features are decoded and fused into the frame at time t.">
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Qualitative results </h3>
+                    <p style="text-align: left;">
+                        Reconstructions on the E2D2 dataset across a range of lighting and motion profiles, compared
+                        against event- and image-based baselines.
+                    </p>
+                    <img src="images/qual_results.png" width="100%"
+                        alt="Qualitative video decompression results compared with event- and image-based baselines.">
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Downstream tasks </h3>
+                    <p style="text-align: left;">
+                        Decompressed frames help downstream perception, not just perceptual quality: 3D Gaussian
+                        Splatting reconstructions improve when built from the decompressed images, and AprilTag
+                        detection at the same instant in time goes from 0 to 32 detections.
+                    </p>
+                    <img src="images/downstream_results.png" width="100%"
+                        alt="Downstream results: 3D Gaussian Splatting reconstruction quality and AprilTag detection rate both improve with decompressed frames.">
+                </div>
+            </div><br><br>
+
+            <div class="col-md-8 offset-md-2 text-start">
+                <h4>
+                    Acknowledgements
+                </h4>
+
+                <p style="text-align: left;">
+                    We gratefully acknowledge the support of the <a href="https://www.grasp.upenn.edu/">GRASP
+                        Laboratory</a> at the University of Pennsylvania and the Robotic Interactive Perception group at
+                    TU Berlin.
+                    <br><br><br>
+                </p>
+            </div>
+
+            <section class="section" id="BibTeX">
+                <div class="col-md-8 offset-md-2 text-start">
+                    <h2 class="title" style="text-align: center;">BibTeX</h2>
+                    <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; text-align: left;"><code>@inproceedings{wang2025continuitycam,
+title={{Event-based Continuous Color Video Decompression from Single Frames}},
+author={Wang, Ziyun and Hamann, Friedhelm and Chaney, Kenneth and Jiang, Wen
+     and Gallego, Guillermo and Daniilidis, Kostas},
+booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+year={2025}
+}</code></pre>
+                </div>
+            </section>
+
+            <br><br>
+        </main>
+    </div>
+</body>
+
+</html>

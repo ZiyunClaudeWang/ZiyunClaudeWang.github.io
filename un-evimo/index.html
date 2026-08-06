@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Un-EVIMO: Unsupervised Event-based Independent Motion Segmentation</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Un-EVIMO: Unsupervised Event-based Independent Motion Segmentation">
+    <meta property="og:url" content="https://ziyunclaudewang.github.io/un-evimo/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ziyunclaudewang.github.io/un-evimo/images/teaser.png">
+    <link rel="author" href="https://ziyunclaudewang.github.io">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TYPQ2VXYS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-5TYPQ2VXYS');
+    </script>
+</head>
+
+<body style="padding: 5%; padding-top: min(15px, 5%); padding-bottom: min(5px, 5%); width: 100%">
+    <div class="container-lg text-center" style="max-width: 1500px; margin: auto;" id="main">
+        <header role="banner">
+            <div class="row">
+                <h2 class="col-md-12 text-center">
+                    <b>Un-EVIMO:</b> Unsupervised Event-based Independent Motion Segmentation<br>
+                </h2>
+                <h4 class="col-md-12 text-center mb-4">
+                </h4>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-12 text-center">
+                    <ul class="list-inline" style="margin:0px 0px 0px 0px;">
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://ziyunclaudewang.github.io/">Ziyun
+                                Wang¹</a></li>
+                        <li><span style="font-size: calc(min(3vw, 15px))">Jinyuan Guo¹</span></li>
+                        <li><a style="font-size: calc(min(3vw, 15px))" href="https://www.cis.upenn.edu/~kostas/">Kostas
+                                Daniilidis¹𝄒²</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12 text-center" style="font-size: calc(min(3vw, 15px))">
+                    <a href="https://www.cis.upenn.edu/">¹University of
+                        Pennsylvania</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                        href="https://archimedesai.gr/">²Archimedes, Athena RC</a>
+                </div>
+                <div class="col-md-12 text-center" style="font-size: calc(min(3vw, 15px))">
+                    <b>ECCV 2024</b>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <span class="link-block" style="padding-top: 10px; padding-bottom: 10px">
+                    <a href="https://arxiv.org/abs/2312.00114" class="external-link button is-normal is-rounded is-dark"
+                        style="width: 100px; font-size: 15px">
+                        <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                    </a>
+                    <!-- TODO: placeholder repo — swap for the real one once the code is released -->
+                    <a href="https://github.com/ZiyunClaudeWang/un-evimo"
+                        class="external-link button is-normal is-rounded is-dark" style="width: 100px; font-size: 15px">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                    </a>
+                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-72640-8_13"
+                        class="external-link button is-normal is-rounded is-dark" style="width: 130px; font-size: 15px">
+                        <span>Proceedings</span>
+                    </a>
+                    <a href="https://eccv.ecva.net/virtual/2024/poster/2115"
+                        class="external-link button is-normal is-rounded is-dark" style="width: 100px; font-size: 15px">
+                        <span>Poster</span>
+                    </a>
+                </span>
+            </div>
+        </header>
+
+
+        <main role="main">
+
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <img src="images/teaser.png" width="100%"
+                        alt="Independently moving objects segmented from a stream of events without any motion labels.">
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2 rounded"
+                    style="text-align: center; padding-bottom: 0px; padding-top: 5px; background-color: #d0d5ec;">
+                    <h6 style="text-align: center; color:rgb(0, 0, 0)"><strong>TL;DR</strong>: The first event-based
+                        framework that segments independently moving objects with no motion labels, by generating
+                        pseudo-labels from geometric constraints.</h6>
+                </div>
+            </div><br><br>
+
+            <br />
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Abstract </h3>
+                    <p style="text-align: left;">
+                        Event cameras are a novel type of biologically inspired vision sensor known for their high
+                        temporal resolution, high dynamic range, and low power consumption. Because of these properties,
+                        they are well-suited for processing fast motions that require rapid reactions. Although event
+                        cameras have recently shown competitive performance in unsupervised optical flow estimation,
+                        performance in detecting independently moving objects (IMOs) is lacking behind, although
+                        event-based methods would be suited for this task based on their low latency and HDR properties.
+                    </p>
+                    <p style="text-align: left;">
+                        Previous approaches to event-based IMO segmentation have been heavily dependent on labeled data.
+                        However, biological vision systems have developed the ability to avoid moving objects through
+                        daily tasks without being given explicit labels. In this work, we propose the first event
+                        framework that generates IMO pseudo-labels using geometric constraints. Due to its unsupervised
+                        nature, our method can handle an arbitrary number of not predetermined objects and is easily
+                        scalable to datasets where expensive IMO labels are not readily available. We evaluate our
+                        approach on the EVIMO dataset and show that it performs competitively with supervised methods,
+                        both quantitatively and qualitatively.
+                    </p>
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Pipeline </h3>
+                    <p style="text-align: left;">
+                        Left dotted box: we train a network to directly predict IMO masks from events. Rest of the
+                        figure: we use a geometric self-labeling method to generate binary IMO pseudo-labels that
+                        supervise the IMO segmentation network. Our framework uses off-the-shelf optical flow
+                        (fine-tuned on image-based flow) and input depth. The camera motion fitted from flow and depth
+                        through RANSAC is used to compute rigid flow from the camera only. Pseudo-labels are generated
+                        through adaptive thresholding based on the magnitude of the estimated IMO motion field.
+                    </p>
+                    <img src="images/pipeline.png" width="100%"
+                        alt="Un-EVIMO pipeline: an IMO mask network supervised by geometric pseudo-labels derived from optical flow, depth and RANSAC-fitted camera motion.">
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Qualitative results </h3>
+                    <p style="text-align: left;">
+                        Qualitatively, our results are very similar in quality compared with supervised CNN methods,
+                        largely outperform optimization-based methods, and even outperform supervised SNNs. SpikeMS
+                        tends to sparsify the events and keep edges. EMSGC needs extensive tuning to get reasonable
+                        results, and it still misclassifies IMOs as rigid areas. With these noisy predictions across the
+                        image from SpikeMS and EMSGC, IMOs cannot be easily detected and handled, while our network
+                        produces spatially consistent segmentations.
+                    </p>
+                    <img src="images/qual_results.png" width="100%"
+                        alt="Segmentation results of EMSGC, SpikeMS, Un-EVIMO and supervised baselines on EVIMO sequences.">
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Motion segmentation in action </h3>
+                    <p style="text-align: left;">
+                        We compute the motion segmentation results on the <i>Wall</i> test sequence in the EV-IMO
+                        dataset. The red events belong to segmented IMOs and the blue events are the background events.
+                        Running inference with Un-EVIMO is simple and requires no parameter tuning: while training needs
+                        geometry-based labels, only events are used for prediction. We take the best of both worlds of
+                        deep learning and optimization &mdash; 1) simple and robust inference with a single feed-forward
+                        pass, and 2) scalable training with no expensive annotations required.
+                    </p>
+                    <video class="video" style="max-width: 480px" width="100%" loop playsinline autoplay muted controls>
+                        <source src="videos/wall_vis.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div><br><br>
+
+            <div class="col-md-8 offset-md-2 text-start">
+                <h4>
+                    Acknowledgements
+                </h4>
+
+                <p style="text-align: left;">
+                    The authors gratefully acknowledge the support of NSF FRR 2220868, NSF IIS-RI 2212433, NSF TRIPODS
+                    1934960 and ONR N00014-22-1-2677.
+                    <br><br><br>
+                </p>
+            </div>
+
+            <section class="section" id="BibTeX">
+                <div class="col-md-8 offset-md-2 text-start">
+                    <h2 class="title" style="text-align: center;">BibTeX</h2>
+                    <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; text-align: left;"><code>@inproceedings{wang2024unevimo,
+title={{Un-EVIMO: Unsupervised Event-based Independent Motion Segmentation}},
+author={Wang, Ziyun and Guo, Jinyuan and Daniilidis, Kostas},
+booktitle={European Conference on Computer Vision (ECCV)},
+pages={228--245},
+year={2024}
+}</code></pre>
+                </div>
+            </section>
+
+            <br><br>
+        </main>
+    </div>
+</body>
+
+</html>
