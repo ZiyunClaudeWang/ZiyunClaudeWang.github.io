@@ -117,6 +117,19 @@
                 </div>
             </div><br><br>
 
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <img src="images/fps_ladder.gif" width="100%"
+                        alt="One event stream, one latent code, decoded at 15, 120, and 240 FPS">
+                    <p style="text-align: left; font-size: 14px; color: #555; margin-top: 8px;">
+                        <em>Top: the raw event stream as a 3D space-time (x, y, t) cloud. Bottom: the same latent code
+                        from one forward pass, queried at 15, 120, and 240 FPS, next to the 15 FPS ground-truth labels
+                        (8&times; slow motion). More timestamps, smoother motion &mdash; nothing is interpolated or
+                        retrained.</em>
+                    </p>
+                </div>
+            </div><br>
+
             <br />
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -155,6 +168,77 @@
                     </p>
                     <img src="images/qual.png" width="100%"
                         alt="Qualitative human mesh recovery results from event streams.">
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Continuous-time demo </h3>
+                    <p style="text-align: left;">
+                        Because the motion field is continuous in time, each clip can be decoded at an arbitrary number
+                        of timestamps rather than only at the labelled keyframes &mdash; genuine slow motion rather
+                        than interpolated frames.
+                    </p>
+                    <img src="images/demo_preview.gif" width="100%"
+                        alt="Events, prediction from two views, and ground truth">
+                    <p style="text-align: left; font-size: 14px; color: #555; margin-top: 8px;">
+                        <em>Left to right: raw events as a 3D space-time (x, y, t) cloud, our prediction from the front
+                        and side, and the ground truth.</em>
+                    </p>
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> Initialization-free tracking (v1.1) </h3>
+                    <p style="text-align: left;">
+                        The paper protocol conditions each clip on a known initial pose. The v1.1 release of the
+                        <a href="https://github.com/ZiyunClaudeWang/evhuman">code</a> removes that requirement entirely:
+                        the pipeline runs from the event stream and a detector box alone. The initial pose &mdash;
+                        including the front/back facing direction &mdash; is regressed by a transformer over
+                        polarity-preserving event count voxels, and an optional contact-ground refinement pins the
+                        sequence's depth using rig geometry only.
+                    </p>
+                    <img src="images/initfree_demo.gif" width="100%"
+                        alt="Full-frame events with the detector box, the polarity/count voxel crop the transformer sees, and the initialization-free reconstruction placed in the world">
+                    <p style="text-align: left; font-size: 14px; color: #555; margin-top: 8px;">
+                        <em>Left: events with the detected box. Middle: the polarity-preserving voxel crop the
+                        transformer sees. Right: the initialization-free reconstruction placed in the world with its
+                        predicted, contact-grounded translation.</em>
+                    </p>
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3> The BEAHM dataset </h3>
+                    <p style="text-align: left;">
+                        BEAHM (Beam-splitter Event Agile Human Motion) is captured with a hardware-synchronized rig: an
+                        event camera and a frame camera share one optical axis through a beam splitter, and SMPL ground
+                        truth is fit by multi-view optimization over four additional synchronized cameras, at a true
+                        120 FPS. Beyond the basic training/test motions, the release includes an <em>extreme</em>
+                        subset &mdash; martial arts, jumps with full twists, ball sports &mdash; at speeds where frame
+                        cameras blur.
+                    </p>
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <img src="images/beahm/taekwondo.gif" width="100%" alt="BEAHM taekwondo sequence">
+                        </div>
+                        <div class="col-6">
+                            <img src="images/beahm/jumptwist.gif" width="100%" alt="BEAHM jump-with-twist sequence">
+                        </div>
+                        <div class="col-6">
+                            <img src="images/beahm/volleyball.gif" width="100%" alt="BEAHM volleyball sequence">
+                        </div>
+                        <div class="col-6">
+                            <img src="images/beahm/tennisswing.gif" width="100%" alt="BEAHM tennis swing sequence">
+                        </div>
+                    </div>
+                    <p style="text-align: left; font-size: 14px; color: #555; margin-top: 8px;">
+                        <em>Left to right in each clip: raw events, the GT mesh vertices projected onto the events
+                        (exact calibration chain, lens distortion included), and the 120 FPS ground truth seen from the
+                        event camera, 4&times; slow motion.</em>
+                    </p>
                 </div>
             </div><br><br>
 
