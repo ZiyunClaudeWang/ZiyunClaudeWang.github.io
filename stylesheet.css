@@ -29,7 +29,7 @@ th,
 tr,
 p {
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.6;
   color: #000;
 }
@@ -68,13 +68,13 @@ h2 {
   padding-bottom: 10px;
   font-weight: 600;
   font-family: var(--font-display);
-  font-size: 30px;
+  font-size: 26px;
   color: var(--theme-color);
 }
 
 .papertitle {
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.35;
   color: var(--theme-color);
@@ -84,7 +84,7 @@ h2 {
   padding-top: 20px;
   margin: 0;
   font-family: var(--font-display);
-  font-size: 40px;
+  font-size: 36px;
   line-height: 1.2;
   color: var(--theme-color);
 }
@@ -134,7 +134,7 @@ table {
 .lab-badge {
   margin: 4px 0 0 0;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text-muted);
 }
 
@@ -143,7 +143,7 @@ table {
 }
 
 .lab-badge img {
-  width: 28px;
+  width: 26px;
   height: auto;
   margin-right: 6px;
   vertical-align: -7px;
@@ -158,29 +158,29 @@ table {
 .theme-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 16px;
 }
 
 .theme-card {
   display: flex;
   flex-direction: column;
-  padding: 20px 18px;
-  border-top: 4px solid var(--theme-color);
+  padding: 16px;
+  border-top: 3px solid var(--theme-color);
   border-radius: 6px;
   background-color: rgba(14, 81, 152, 0.06);
 }
 
 .theme-icon {
-  width: 34px;
-  height: 34px;
-  margin-bottom: 10px;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 8px;
   color: var(--theme-color);
 }
 
 .theme-card h3 {
   margin: 0 0 8px 0;
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 700;
   line-height: 1.25;
   color: var(--theme-color);
@@ -188,22 +188,22 @@ table {
 
 .theme-card p {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   color: #222;
 }
 
 .theme-card .theme-projects {
   margin-top: auto;
-  padding-top: 14px;
+  padding-top: 12px;
   line-height: 1;
 }
 
 .theme-projects a {
   display: inline-block;
   margin: 0 4px 6px 0;
-  padding: 5px 7px;
-  font-size: 13px;
+  padding: 4px 7px;
+  font-size: 12px;
   white-space: nowrap;
   border: 1px solid var(--theme-color-light-hover);
   border-radius: 3px;
@@ -219,7 +219,7 @@ table {
 
 .recruitment-details {
   background-color: var(--theme-color-tint);
-  padding: 20px;
+  padding: 18px;
   border-radius: 4px;
   border-left: 3px solid var(--theme-color);
 }
@@ -238,7 +238,7 @@ table {
 
 .recruitment-details code {
   font-family: var(--font-mono);
-  font-size: 15px;
+  font-size: 14px;
   background-color: white;
   border: 1px solid var(--theme-color-light-hover);
   border-radius: 3px;
@@ -252,7 +252,7 @@ table {
 }
 
 .news-date {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--text-muted);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
@@ -280,7 +280,7 @@ table {
 
 .pub-note {
   margin: -10px 0 0 0;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
@@ -314,14 +314,14 @@ table {
 .feat-media {
   display: block;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   height: auto;
   border-radius: 6px;
 }
 
 .pub-authors,
 .pub-venue {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--text-muted);
 }
@@ -357,8 +357,8 @@ table {
 .pub-links a {
   display: inline-block;
   margin: 0 6px 6px 0;
-  padding: 5px 9px;
-  font-size: 14px;
+  padding: 4px 8px;
+  font-size: 13px;
   border-radius: 3px;
   background-color: var(--theme-color-light);
   transition: background-color 0.2s ease;
@@ -370,7 +370,7 @@ table {
 
 .pub-desc {
   margin: 4px 0 0 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.55;
   color: #222;
 }
@@ -379,7 +379,7 @@ table {
 @media (max-width: 768px) {
   body {
     margin: 0;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .page-container {
@@ -389,16 +389,16 @@ table {
   h2 {
     margin: 32px 0 14px 0;
     padding-bottom: 0;
-    font-size: 24px;
+    font-size: 21px;
   }
 
   .papertitle {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .profile-table p.name,
   .profile-table p.name strong {
-    font-size: 30px !important;
+    font-size: 27px !important;
     line-height: 1.15;
   }
 
@@ -420,8 +420,8 @@ table {
   .profile-table td:first-child::before {
     content: "";
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     margin: 0 auto 16px;
     background: url('headshot/headshot_720.jpg') center / cover no-repeat;
     border-radius: 50%;
@@ -430,12 +430,12 @@ table {
   .profile-table p:not(.name),
   .info-table p,
   .info-table li {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
 
   .info-table .theme-card .theme-projects,
   .info-table .pub-note {
-    font-size: 14px !important;
+    font-size: 13px !important;
   }
 
   .info-table td {
@@ -473,7 +473,7 @@ table {
   }
 
   .theme-card {
-    padding: 16px;
+    padding: 14px;
   }
 
   /* Publications: full-width media above the text */
@@ -501,7 +501,7 @@ table {
 
   .pub-authors,
   .pub-venue {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .feat-media,
