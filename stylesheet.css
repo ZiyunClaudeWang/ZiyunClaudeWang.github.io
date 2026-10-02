@@ -314,33 +314,6 @@ table {
   border-radius: 6px;
 }
 
-/* Paused paper videos show a small play badge */
-.video-thumb {
-  position: relative;
-  max-width: 300px;
-}
-
-.video-thumb .feat-media {
-  max-width: none;
-  cursor: pointer;
-}
-
-.video-thumb::after {
-  content: "";
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M4 2.5v7l5.5-3.5z' fill='white'/%3E%3C/svg%3E") center / 12px no-repeat;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-.video-thumb.is-playing::after {
-  opacity: 0;
-}
 
 .pub-authors,
 .pub-venue {
@@ -538,8 +511,7 @@ table {
   }
 
   .feat-media,
-  .hover-media,
-  .video-thumb {
+  .hover-media {
     max-width: none;
   }
 
