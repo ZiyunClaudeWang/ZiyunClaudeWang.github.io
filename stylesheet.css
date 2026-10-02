@@ -1,8 +1,9 @@
 :root {
-  --theme-color: #8C1515;
-  --theme-color-light: rgba(140, 21, 21, 0.1);
-  --theme-color-light-hover: rgba(140, 21, 21, 0.2);
-  --theme-color-tint: rgba(140, 21, 21, 0.04);
+  /* SPIKE Lab logo blue */
+  --theme-color: #0E5198;
+  --theme-color-light: rgba(14, 81, 152, 0.1);
+  --theme-color-light-hover: rgba(14, 81, 152, 0.2);
+  --theme-color-tint: rgba(14, 81, 152, 0.05);
   --text-muted: #555;
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", sans-serif;
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Segoe UI", sans-serif;
@@ -34,6 +35,13 @@ p {
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 .page-container {
@@ -101,10 +109,66 @@ table {
   border-radius: 50%;
 }
 
-/* Recruitment section styling */
-.announcement-row h2 {
+.lab-badge {
+  margin: 4px 0 0 0;
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.lab-badge a {
+  font-weight: 600;
+}
+
+.lab-badge img {
+  width: 28px;
+  height: auto;
+  margin-right: 6px;
+  vertical-align: -7px;
+}
+
+/* Research themes */
+.research-row h2 {
   margin-top: 0;
 }
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.theme-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #111;
+}
+
+.theme-card h3 {
+  margin: 12px 0 4px 0;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--theme-color);
+}
+
+.theme-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.theme-card .theme-projects {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Recruitment section styling */
 
 .recruitment-details {
   background-color: var(--theme-color-tint);
@@ -189,6 +253,45 @@ table {
 .research-list td:first-child video {
   max-width: 100%;
   height: auto;
+}
+
+.research-list tr {
+  scroll-margin-top: 16px;
+}
+
+.research-list tr:target td {
+  background-color: var(--theme-color-tint);
+}
+
+.pub-group {
+  margin: 10px 0 0 0;
+  padding: 0 10px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.featured-list {
+  margin-bottom: 20px;
+}
+
+.featured-list td:first-child {
+  width: 36%;
+}
+
+.featured-list td:nth-child(2) {
+  width: 64%;
+}
+
+.feat-media {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 6px;
 }
 
 .pub-authors,
@@ -307,6 +410,39 @@ table {
 
   .news-list li {
     overflow-wrap: anywhere;
+  }
+
+  .theme-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .theme-card {
+    display: grid;
+    grid-template-columns: 38% 1fr;
+    column-gap: 12px;
+    align-items: start;
+  }
+
+  .theme-media {
+    grid-row: span 3;
+  }
+
+  .theme-card h3 {
+    margin-top: 0;
+    font-size: 15px;
+  }
+
+  .info-table .theme-card p {
+    font-size: 13px !important;
+  }
+
+  .feat-media {
+    margin: 0 auto;
+  }
+
+  .pub-group {
+    padding: 0 15px;
   }
 
   .recruitment-details {

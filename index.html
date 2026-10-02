@@ -39,6 +39,10 @@
                 <p class="name" style="text-align: center;">
                   <strong>Ziyun (Claude) Wang</strong>
                 </p>
+                <p class="lab-badge">
+                  <a href="https://github.com/spikelab-jhu"><img src="images/spike_mark.png" width="28" height="27" alt="">SPIKE Lab</a>
+                  &middot; Johns Hopkins University
+                </p>
                 <p>
                   I am an Assistant Professor in the Department of Electrical and Computer Engineering at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, where I lead the <a href="https://github.com/spikelab-jhu">SPIKE Lab</a>.
                   My research sits at the intersection of computer vision, robotics, and neuromorphic computing, with a focus on event-based, continuous-time perception&mdash;building systems that see and act at the speed of the physical world.
@@ -59,6 +63,31 @@
           </tbody></table>
 
           <table class="info-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr class="research-row">
+              <td style="padding: 10px; width: 100%; vertical-align: middle;">
+                <h2>Research</h2>
+                <div class="theme-grid">
+                  <div class="theme-card">
+                    <video class="theme-media" src="images/thumbs/theme_events.mp4" poster="images/thumbs/theme_events_poster.webp" muted loop playsinline preload="none" data-autoplay aria-label="Stereo camera frames and event streams from the M3ED dataset"></video>
+                    <h3>Event-based perception</h3>
+                    <p>Algorithms for event cameras, sensors that report per-pixel brightness changes with microsecond latency: from feature matching to motion segmentation and 3D reconstruction.</p>
+                    <p class="theme-projects"><a href="#pub-match-any-events">Match-Any-Events</a> &middot; <a href="#pub-un-evimo">Un-EVIMO</a> &middot; <a href="#pub-evac3d">EvAC3D</a></p>
+                  </div>
+                  <div class="theme-card">
+                    <video class="theme-media" src="images/thumbs/theme_motion.mp4" poster="images/thumbs/theme_motion_poster.webp" muted loop playsinline preload="none" data-autoplay aria-label="Human motion recovered from events at 15, 120, and 240 FPS"></video>
+                    <h3>Continuous-time motion</h3>
+                    <p>Modeling how people, cameras, and scenes move as continuous functions of time, so motion can be queried at any rate instead of a fixed frame rate.</p>
+                    <p class="theme-projects"><a href="#pub-evhuman">Human Motion Field</a> &middot; <a href="#pub-continuitycam">ContinuityCam</a> &middot; <a href="#pub-motion-prior">Motion-prior CMax</a></p>
+                  </div>
+                  <div class="theme-card">
+                    <video class="theme-media" src="images/thumbs/theme_robots.mp4" poster="images/thumbs/theme_robots_poster.webp" muted loop playsinline preload="none" data-autoplay aria-label="EV-Catcher robot catching a fast-moving ball"></video>
+                    <h3>Perception for agile robots</h3>
+                    <p>Closing the loop between fast perception and action: high-speed catching, active scene reconstruction, and simulation tools for event-driven robots.</p>
+                    <p class="theme-projects"><a href="#pub-ev-catcher">EV-Catcher</a> &middot; <a href="#pub-trace">TRACE</a> &middot; <a href="#pub-evis">EVIS</a></p>
+                  </div>
+                </div>
+              </td>
+            </tr>
             <tr class="announcement-row">
               <td style="padding: 10px; width: 100%; vertical-align: middle;">
                 <h2>Prospective Students</h2>
@@ -110,12 +139,11 @@
               </td>
             </tr>
           </tbody></table>
-          <table class="research-list" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr>
+          <h3 class="pub-group">Selected</h3>
+          <table class="research-list featured-list" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr id="pub-trace">
           <td>
-            <div>
-              <video src="images/thumbs/trace.mp4" width="160" autoplay loop muted playsinline aria-label="Robot exploring a scene along an ergodic trajectory for active reconstruction"></video>
-            </div>
+            <video class="feat-media" src="images/thumbs/trace.mp4" poster="images/thumbs/trace_poster.webp" muted loop playsinline preload="none" data-autoplay aria-label="Robot exploring a scene along an ergodic trajectory for active reconstruction"></video>
           </td>
           <td>
             <a class="papertitle" href="https://github.com/spikelab-jhu/trace-active-reconstruction">TRACE: Ergodic Trajectory Optimization for Active Scene Reconstruction</a>
@@ -135,11 +163,76 @@
             <p class="pub-desc">The first trajectory-level ergodic formulation for active Gaussian scene reconstruction. Footprint-aware ergodic search gains +1.5 dB PSNR over baselines and runs directly on real robots, including the Unitree GO2 and Franka FR3.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-match-any-events">
+          <td>
+            <video class="feat-media" src="images/thumbs/feat_match_any_events.mp4" poster="images/thumbs/feat_match_any_events_poster.webp" muted loop playsinline preload="none" data-autoplay aria-label="Real-time Match-Any-Events feature matching demo"></video>
+          </td>
+          <td>
+            <a class="papertitle" href="https://github.com/spikelab-jhu/Match-Any-Events">Match-Any-Events: Zero-Shot Motion-Robust Feature Matching Across Wide Baselines for Event Cameras</a>
+            <div class="pub-authors">
+              Ruijun (Rex) Zhang,
+              Hang Su,
+              <a href="https://www.cis.upenn.edu/~kostas/">Kostas Daniilidis</a>,
+              <strong>Ziyun Wang</strong>
+            </div>
+            <div class="pub-venue">European Conference on Computer Vision (ECCV), 2026</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2604.18744">Paper</a>
+              <a href="https://github.com/spikelab-jhu/Match-Any-Events">Code</a>
+            </div>
+            <p class="pub-desc">Zero-shot wide-baseline feature matching for event cameras, using motion-robust multi-timescale attention and sparsity-aware token selection. Improves on prior event matching methods by 37.7%.</p>
+          </td>
+        </tr>
+        <tr id="pub-evhuman">
+          <td>
+            <video class="feat-media" src="images/thumbs/feat_evhuman.mp4" poster="images/thumbs/feat_evhuman_poster.webp" muted loop playsinline preload="none" data-autoplay aria-label="Events from a walking person and the reconstructed 3D human body"></video>
+          </td>
+          <td>
+            <a class="papertitle" href="evhuman/">Continuous-Time Human Motion Field from Events</a>
+            <div class="pub-authors">
+              <strong>Ziyun Wang</strong>,
+              Ruijun Zhang,
+              Zi-Yan Liu,
+              Yufu Wang,
+              Kostas Daniilidis
+            </div>
+            <div class="pub-venue">International Conference on Computer Vision (ICCV), 2025</div>
+            <div class="pub-links">
+              <a href="evhuman/">Project page</a>
+              <a href="https://arxiv.org/abs/2412.01747">Paper</a>
+              <a href="https://github.com/ZiyunClaudeWang/evhuman">Code</a>
+            </div>
+            <p class="pub-desc">Human motion as a continuous-time field from events. A recurrent, time-implicit network supports parallel pose queries at any temporal resolution, with 23.8% lower joint error and 69% less compute.</p>
+          </td>
+        </tr>
+        <tr id="pub-evac3d">
+          <td>
+            <video class="feat-media" src="images/thumbs/feat_evac3d.mp4" poster="images/thumbs/feat_evac3d_poster.webp" muted loop playsinline preload="none" data-autoplay aria-label="EvAC3D reconstructing an object from event-based apparent contours"></video>
+          </td>
+          <td>
+            <a class="papertitle" href="evac3d/">EvAC3D: From Event-Based Apparent Contours to 3D Models via Continuous Visual Hulls</a>
+            <div class="pub-authors">
+              <strong>Ziyun Wang</strong>*,
+              Kenneth Chaney*,
+              Kostas Daniilidis
+            </div>
+            <div class="pub-venue">European Conference on Computer Vision (ECCV), 2022 &middot; <span class="pub-award">Oral Presentation (top 2.7% of papers)</span></div>
+            <div class="pub-links">
+              <a href="evac3d/">Project page</a>
+              <a href="https://arxiv.org/abs/2304.05296">Paper</a>
+              <a href="https://github.com/daniilidis-group/EvAC3D">Code</a>
+            </div>
+            <p class="pub-desc">3D reconstruction from event cameras via continuous visual hulls built from apparent contour events, producing high-fidelity meshes from real event sequences with per-event refinement.</p>
+          </td>
+        </tr>
+          </tbody></table>
+          <h3 class="pub-group">More publications</h3>
+          <table class="research-list" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr id="pub-evis">
           <td>
             <div class="one" onmouseout="evis_stop()" onmouseover="evis_start()">
               <div class="two" id="evis_demo" style="opacity: 0; display: flex; align-items: center;">
-                <video src="images/thumbs/evis_franka.mp4" width="160" autoplay loop muted playsinline aria-label="Isaac Sim event camera wrist-camera demo on a Franka robot arm"></video>
+                <video src="images/thumbs/evis_franka.mp4" poster="images/thumbs/evis_franka_poster.webp" width="160" muted loop playsinline preload="none" data-autoplay aria-label="Isaac Sim event camera wrist-camera demo on a Franka robot arm"></video>
               </div>
               <img src="images/thumbs/evis_gui.webp" width="160" height="160" style="height: 160px; object-fit: cover;" loading="lazy" alt="Isaac Sim event camera live-preview interface">
             </div>
@@ -169,74 +262,7 @@
             <p class="pub-desc">High-rate event camera simulation accelerated by motion-vector frame interpolation, with HDR support, sensor noise models, motion blur, and tools for downstream training.</p>
           </td>
         </tr>
-        <tr>
-          <td>
-            <div class="one" onmouseout="match_any_events_stop()" onmouseover="match_any_events_start()">
-              <div class="two" id="match_any_events_demo" style="opacity: 0; display: flex; align-items: center;">
-                <video width="160" loop muted playsinline preload="metadata" poster="images/thumbs/match_any_events.webp" aria-label="Real-time Match-Any-Events feature matching demo">
-                  <source src="images/thumbs/match_any_events_demo.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div style="width:160px;height:160px;display:flex;align-items:center;">
-                <img src="images/thumbs/match_any_events.webp" width="160" loading="lazy" alt="Match-Any-Events feature matching across event-camera views">
-              </div>
-            </div>
-            <script>
-              function match_any_events_start() {
-                const demo = document.getElementById('match_any_events_demo');
-                demo.style.opacity = "1";
-                demo.querySelector('video').play();
-              }
-
-              function match_any_events_stop() {
-                const demo = document.getElementById('match_any_events_demo');
-                demo.style.opacity = "0";
-                demo.querySelector('video').pause();
-              }
-              match_any_events_stop();
-            </script>
-          </td>
-          <td>
-            <a class="papertitle" href="https://github.com/spikelab-jhu/Match-Any-Events">Match-Any-Events: Zero-Shot Motion-Robust Feature Matching Across Wide Baselines for Event Cameras</a>
-            <div class="pub-authors">
-              Ruijun (Rex) Zhang,
-              Hang Su,
-              <a href="https://www.cis.upenn.edu/~kostas/">Kostas Daniilidis</a>,
-              <strong>Ziyun Wang</strong>
-            </div>
-            <div class="pub-venue">European Conference on Computer Vision (ECCV), 2026</div>
-            <div class="pub-links">
-              <a href="https://arxiv.org/abs/2604.18744">Paper</a>
-              <a href="https://github.com/spikelab-jhu/Match-Any-Events">Code</a>
-            </div>
-            <p class="pub-desc">Zero-shot wide-baseline feature matching for event cameras, using motion-robust multi-timescale attention and sparsity-aware token selection. Improves on prior event matching methods by 37.7%.</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div>
-              <img src="images/thumbs/evhuman.webp" width="160" loading="lazy" alt="Continuous-time human motion field results from event cameras">
-            </div>
-          </td>
-          <td>
-            <a class="papertitle" href="evhuman/">Continuous-Time Human Motion Field from Events</a>
-            <div class="pub-authors">
-              <strong>Ziyun Wang</strong>,
-              Ruijun Zhang,
-              Zi-Yan Liu,
-              Yufu Wang,
-              Kostas Daniilidis
-            </div>
-            <div class="pub-venue">International Conference on Computer Vision (ICCV), 2025</div>
-            <div class="pub-links">
-              <a href="evhuman/">Project page</a>
-              <a href="https://arxiv.org/abs/2412.01747">Paper</a>
-              <a href="https://github.com/ZiyunClaudeWang/evhuman">Code</a>
-            </div>
-            <p class="pub-desc">Human motion as a continuous-time field from events. A recurrent, time-implicit network supports parallel pose queries at any temporal resolution, with 23.8% lower joint error and 69% less compute.</p>
-          </td>
-        </tr>
-        <tr>
+        <tr id="pub-eqnio">
           <td>
             <div>
               <img src="images/thumbs/eqnio.webp" width="160" loading="lazy" alt="EqNIO teaser figure">
@@ -260,10 +286,10 @@
             <p class="pub-desc">Neural inertial odometry that exploits roto-reflective symmetries in IMU data through equivariant, gravity-aligned canonicalization, improving displacement estimates on the TLIO, Aria, RIDI, and OxIOD benchmarks.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-continuitycam">
           <td>
             <div>
-              <video src="images/thumbs/continuity_cam.mp4" width="160" autoplay loop muted playsinline aria-label="Continuous color video decoded from events and a single frame"></video>
+              <video src="images/thumbs/continuity_cam.mp4" poster="images/thumbs/continuity_cam_poster.webp" width="160" muted loop playsinline preload="none" data-autoplay aria-label="Continuous color video decoded from events and a single frame"></video>
             </div>
           </td>
           <td>
@@ -284,10 +310,10 @@
             <p class="pub-desc">Continuous color video reconstructed from a single RGB frame and an event stream, combining long-range motion modeling with neural synthesis to outperform baselines by 3.61 dB PSNR.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-un-evimo">
           <td>
             <div>
-              <video src="images/thumbs/unseg.mp4" width="160" autoplay loop muted playsinline aria-label="Un-EVIMO independent motion segmentation demo"></video>
+              <video src="images/thumbs/unseg.mp4" poster="images/thumbs/unseg_poster.webp" width="160" muted loop playsinline preload="none" data-autoplay aria-label="Un-EVIMO independent motion segmentation demo"></video>
             </div>
           </td>
           <td>
@@ -306,7 +332,7 @@
             <p class="pub-desc">Unsupervised event-based independent motion segmentation that uses geometric constraints to generate pseudo-labels, handles any number of moving objects, and is competitive with supervised methods on EVIMO.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-motion-prior">
           <td>
             <div>
               <img src="images/thumbs/motion_prior.webp" width="160" loading="lazy" alt="Motion-prior contrast maximization overview">
@@ -330,10 +356,10 @@
             <p class="pub-desc">Self-supervised dense continuous-time motion estimation for event cameras, combining contrast maximization with non-linear motion priors to improve zero-shot real-world performance by 29% on EVIMO2.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-tram">
           <td>
             <div>
-              <video src="images/thumbs/tram.mp4" width="160" autoplay loop muted playsinline aria-label="TRAM recovering 3D human motion from in-the-wild video"></video>
+              <video src="images/thumbs/tram.mp4" poster="images/thumbs/tram_poster.webp" width="160" muted loop playsinline preload="none" data-autoplay aria-label="TRAM recovering 3D human motion from in-the-wild video"></video>
             </div>
           </td>
           <td>
@@ -353,10 +379,10 @@
             <p class="pub-desc">Global trajectory and body motion of 3D humans from in-the-wild videos, combining robustified SLAM for camera motion with a video transformer for kinematic body regression.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-track-fast">
           <td>
             <div>
-              <video src="images/thumbs/track_fast.mp4" width="160" autoplay loop muted playsinline aria-label="Fast and robust point tracking demo"></video>
+              <video src="images/thumbs/track_fast.mp4" poster="images/thumbs/track_fast_poster.webp" width="160" muted loop playsinline preload="none" data-autoplay aria-label="Fast and robust point tracking demo"></video>
             </div>
           </td>
           <td>
@@ -377,10 +403,10 @@
             <p class="pub-desc">Test-time optimization for dense video point tracking with an invertible deformation network and foundation-model priors, over 10&times; faster and more robust than OmniMotion.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-m3ed">
           <td>
             <div>
-              <video src="images/thumbs/m3ed.mp4" width="160" autoplay loop muted playsinline aria-label="M3ED event camera data"></video>
+              <video src="images/thumbs/m3ed.mp4" poster="images/thumbs/m3ed_poster.webp" width="160" muted loop playsinline preload="none" data-autoplay aria-label="M3ED event camera data"></video>
             </div>
           </td>
           <td>
@@ -405,32 +431,10 @@
             <p class="pub-desc">An event camera dataset spanning ground vehicles, legged robots, and aerial platforms in challenging conditions, with synchronized stereo event cameras, LiDAR, IMU, and RTK.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-ev-catcher">
           <td>
             <div>
-              <video src="images/thumbs/evac3d.mp4" width="160" autoplay loop muted playsinline aria-label="EvAC3D 3D reconstruction demo"></video>
-            </div>
-          </td>
-          <td>
-            <a class="papertitle" href="evac3d/">EvAC3D: From Event-Based Apparent Contours to 3D Models via Continuous Visual Hulls</a>
-            <div class="pub-authors">
-              <strong>Ziyun Wang</strong>*,
-              Kenneth Chaney*,
-              Kostas Daniilidis
-            </div>
-            <div class="pub-venue">European Conference on Computer Vision (ECCV), 2022 &middot; <span class="pub-award">Oral Presentation (top 2.7% of papers)</span></div>
-            <div class="pub-links">
-              <a href="evac3d/">Project page</a>
-              <a href="https://arxiv.org/abs/2304.05296">Paper</a>
-              <a href="https://github.com/daniilidis-group/EvAC3D">Code</a>
-            </div>
-            <p class="pub-desc">3D reconstruction from event cameras via continuous visual hulls built from apparent contour events, producing high-fidelity meshes from real event sequences with per-event refinement.</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div>
-              <video src="images/thumbs/ev_catcher.mp4" width="160" autoplay loop muted playsinline aria-label="EV-Catcher robot catching a fast-moving object"></video>
+              <video src="images/thumbs/ev_catcher.mp4" poster="images/thumbs/ev_catcher_poster.webp" width="160" muted loop playsinline preload="none" data-autoplay aria-label="EV-Catcher robot catching a fast-moving object"></video>
             </div>
           </td>
           <td>
@@ -454,7 +458,7 @@
             <p class="pub-desc">High-speed object catching with low-latency event-based neural networks and a binary event history image representation, reaching an 81% catch rate on balls at up to 13 m/s.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-eventgan">
           <td>
             <div>
               <img src="images/thumbs/event_gan_input.webp" width="160" loading="lazy" alt="EventGAN input frame">
@@ -477,7 +481,7 @@
             <p class="pub-desc">GAN-based event simulation from image pairs with cycle-consistency losses, enabling object detection and pose estimation networks to train on large image datasets without real event labels.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-cost-to-go">
           <td>
             <div>
               <img src="images/thumbs/cost_to_go.webp" width="160" loading="lazy" alt="Robot arm motion planning scene">
@@ -499,7 +503,7 @@
             <p class="pub-desc">A higher-order function network that generates cost-to-go functions over configuration space, running orders of magnitude faster than planners that explore configuration space online.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-surface-hof">
           <td>
             <div>
               <img src="images/thumbs/surface_hof.webp" width="160" loading="lazy" alt="Surface HOF dragon reconstruction">
@@ -519,7 +523,7 @@
             <p class="pub-desc">Single-image surface reconstruction with a higher-order function network that maps unit-sphere samples to local tangent planes, generating surfaces at arbitrary resolution with few parameters.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-geodesic-hof">
           <td>
             <div>
               <img src="images/thumbs/geodesic_plane.webp" width="160" loading="lazy" alt="Geodesic-HOF airplane reconstruction">
@@ -541,7 +545,7 @@
             <p class="pub-desc">Single-view 3D reconstruction that lifts points into an embedding where Euclidean distance equals geodesic distance on the surface, improving surface normals and enabling unsupervised object decomposition.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-motion-equivariant">
           <td>
             <div>
               <img src="images/thumbs/motion_equivariance.webp" width="160" loading="lazy" alt="Motion equivariant networks teaser figure">
@@ -561,7 +565,7 @@
             <p class="pub-desc">A temporal normalization transform for event data that makes spatiotemporal convolutions equivariant to optical flow, removing the need for motion augmentation in classification.</p>
           </td>
         </tr>
-        <tr>
+        <tr id="pub-robustness">
           <td>
             <div>
               <img src="images/thumbs/robust.webp" width="160" loading="lazy" alt="Hybrid egomotion learning pipeline overview">
@@ -583,9 +587,27 @@
             <p class="pub-desc">A hybrid unsupervised egomotion pipeline combining learned optical flow and disparity with RANSAC outlier rejection and least-squares pose estimation, with automatic moving-object segmentation on KITTI.</p>
           </td>
         </tr>
-          </tbody></table>
+</tbody></table>
         </td>
       </tr>
     </tbody></table>
+    <script>
+      // Play looping videos only while they are on screen, and not at all for reduced-motion users.
+      (function () {
+        var videos = document.querySelectorAll('video[data-autoplay]');
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!('IntersectionObserver' in window)) {
+          videos.forEach(function (v) { v.play().catch(function () {}); });
+          return;
+        }
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) entry.target.play().catch(function () {});
+            else entry.target.pause();
+          });
+        }, { rootMargin: '200px 0px' });
+        videos.forEach(function (v) { observer.observe(v); });
+      })();
+    </script>
   </body>
 </html>
