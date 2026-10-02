@@ -490,7 +490,7 @@ h2[id] {
     width: 140px;
     height: 140px;
     margin: 0 auto 16px;
-    background: url('headshot/headshot_720.jpg') center / cover no-repeat;
+    background: url('headshot/headshot_wide_720.jpg') center / cover no-repeat;
     border-radius: 50%;
   }
 
