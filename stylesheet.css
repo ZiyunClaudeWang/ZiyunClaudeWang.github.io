@@ -58,7 +58,7 @@ html {
 
 .page-container {
   width: calc(100% - 32px);
-  max-width: 1000px;
+  max-width: 900px;
 }
 
 /* Section headers */
@@ -406,7 +406,7 @@ table {
   .profile-table td:first-child {
     display: block;
     width: 100% !important;
-    padding: 24px 14px 0 !important;
+    padding: 24px 16px 0 !important;
     box-sizing: border-box;
   }
 
@@ -436,7 +436,7 @@ table {
   }
 
   .info-table td {
-    padding: 10px 14px !important;
+    padding: 10px 16px !important;
     box-sizing: border-box;
   }
 
@@ -453,7 +453,7 @@ table {
   }
 
   .research-list td {
-    padding: 16px 14px;
+    padding: 16px;
   }
 }
 
@@ -489,11 +489,11 @@ table {
   }
 
   .research-list td:first-child {
-    padding: 0 14px 12px;
+    padding: 0 16px 12px;
   }
 
   .research-list td:nth-child(2) {
-    padding: 0 14px;
+    padding: 0 16px;
   }
 
   .pub-authors,
