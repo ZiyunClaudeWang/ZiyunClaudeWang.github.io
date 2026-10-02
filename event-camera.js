@@ -3,8 +3,10 @@
 // of SPIKE and the word HOPKINS), seen by a camera that moves as the page scrolls. Each sensor
 // pixel fires an ON (brighter) or OFF (darker) event when its log brightness
 // changes by more than a threshold, and events fade out, so a still page
-// shows nothing. The camera moves diagonally, not straight down, so vertical
-// edges fire too. Inspired by the shapes sequences of the Event-Camera Dataset
+// shows nothing. The wall moves exactly with the page, so its motion never
+// disagrees with the scrolling; the icons are tilted a little so their
+// upright edges, which vertical motion alone wouldn't fire, still show.
+// Inspired by the shapes sequences of the Event-Camera Dataset
 // (Mueggler et al., rpg.ifi.uzh.ch/davis_data.html).
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -39,7 +41,7 @@
 
   var CELL = 3;             // CSS px per sensor pixel
   var THRESHOLD = 0.4;      // contrast threshold, in log brightness
-  var TAU = 45;             // event fade time constant, ms
+  var TAU = 25;             // event fade time constant, ms
   var FADE = 5 * TAU;       // events are gone after this long
   var PEAK = 0.45;          // opacity of a fresh event
   var QUIET = 0.1;          // strength once past the intro
@@ -63,7 +65,7 @@
     [40, 226, 0.3, 'drone'],
     [110, 222, 0, 'spike'],
     [214, 220, -0.15, 'E'],
-    [96, 160, -0.06, 'HOPKINS']
+    [96, 160, -0.12, 'HOPKINS']
   ];
   // Pictures used as icons; recoloured to ink once loaded so their thin
   // lines fire as strongly as the drawn icons. Files must be on this site.
@@ -171,10 +173,9 @@
   }
   var tex;
 
-  // Camera path: a straight line, in wall pixels per page pixel scrolled.
-  // Icons rise at about a third of the page speed and drift right; the wall
-  // repeats, so icons leaving one side come back on the other.
-  var SPEED_X = -0.2, SPEED_Y = 0.35;
+  // Wall motion, in wall pixels per page pixel scrolled: locked to the page,
+  // since any other speed or direction makes scrolling feel queasy.
+  var SPEED_X = 0, SPEED_Y = 1;
 
   function color(c, a) {
     return ((Math.round(a * 255) << 24) | (c[2] << 16) | (c[1] << 8) | c[0]) >>> 0;
