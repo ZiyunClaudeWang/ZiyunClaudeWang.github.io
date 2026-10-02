@@ -229,11 +229,6 @@ table {
   margin-bottom: 0;
 }
 
-.recruitment-details .recruit-footer {
-  margin-top: 4px;
-  padding-top: 12px;
-  border-top: 1px solid var(--theme-color-light-hover);
-}
 
 .recruitment-details code {
   font-family: var(--font-mono);
