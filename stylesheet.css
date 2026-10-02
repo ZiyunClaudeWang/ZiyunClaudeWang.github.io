@@ -3,73 +3,10 @@
   --theme-color-light: rgba(140, 21, 21, 0.1);
   --theme-color-light-hover: rgba(140, 21, 21, 0.2);
   --theme-color-tint: rgba(140, 21, 21, 0.04);
+  --text-muted: #555;
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", sans-serif;
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Segoe UI", sans-serif;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  --font-mono: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 a {
@@ -100,21 +37,14 @@ html {
 }
 
 .page-container {
-  width: 60%;
-  max-width: 1200px;
+  width: calc(100% - 32px);
+  max-width: 900px;
 }
 
-strong {
-  font-family: var(--font-sans);
-  font-size: 16px;
-}
-
-.name strong {
-  font-size: inherit;
-}
-
+/* Section headers */
 h2 {
-  margin: 0;
+  margin: 40px 0 20px 0;
+  padding-bottom: 10px;
   font-weight: 600;
   font-family: var(--font-display);
   font-size: 28px;
@@ -136,6 +66,7 @@ h2 {
   color: var(--theme-color);
 }
 
+/* Hover-to-play thumbnails */
 .one {
   width: 160px;
   height: 160px;
@@ -147,18 +78,6 @@ h2 {
   height: 160px;
   position: absolute;
   transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-.fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-span.highlight {
-  background-color: #ffffd0;
 }
 
 /* Section separation styling */
@@ -168,94 +87,18 @@ table {
   border-spacing: 0;
 }
 
-/* Section headers with better spacing */
-h2 {
-  margin: 40px 0 20px 0;
-  font-weight: 600;
-  font-family: var(--font-display);
-  font-size: 28px;
-  color: var(--theme-color);
-  padding-bottom: 10px;
-}
-
-/* News section styling */
-ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-ul li {
-  margin-bottom: 10px;
-  padding: 8px 0;
-}
-
-.news-list li {
-  margin-bottom: 0;
-  padding: 0;
-}
-
-/* Research project entries */
-.research-list > tbody > tr {
-  border-left: 3px solid #e0e0e0;
-}
-
-.research-list td:nth-child(2) {
-  font-family: 'Ubuntu Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
-  color: #666;
-  font-size: 12px;
-}
-
-.research-list .author,
-.research-list td:nth-child(2) strong {
-  color: #666;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.research-list td:nth-child(2) a[href] {
-  color: var(--theme-color);
-  font-size: 12px;
-  background-color: var(--theme-color-light);
-  padding: 2px 4px;
-  border-radius: 2px;
-  transition: background-color 0.2s ease;
-}
-
-.research-list td:nth-child(2) a[href]:hover {
-  background-color: var(--theme-color-light-hover);
-}
-
-.research-list td:nth-child(2) p {
-  color: #666;
-  font-size: 12px;
-}
-
-.research-list td:first-child img,
-.research-list td:first-child video {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Force all strong elements to be bold */
-strong {
-  font-weight: bold !important;
-}
-
-/* Underline for Ziyun Wang name */
-.research-list td:nth-child(2) strong {
-  text-decoration: underline;
-}
-
-/* Project titles */
-.research-list .papertitle {
-  font-family: var(--font-display);
-  color: var(--theme-color);
-}
-
-/* Profile section enhancement */
+/* Profile section */
 .profile-table tr:first-child {
   background-color: white;
   border-radius: 4px 4px 0 0;
+}
+
+.headshot {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 /* Recruitment section styling */
@@ -278,16 +121,12 @@ strong {
   margin-bottom: 0;
 }
 
-.recruitment-details strong {
-  font-size: inherit;
-}
-
 .recruitment-details .subject-line {
   text-align: center;
 }
 
 .recruitment-details code {
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 14px;
   background-color: white;
   border: 1px solid var(--theme-color-light-hover);
@@ -295,10 +134,123 @@ strong {
   padding: 4px 8px;
 }
 
+/* News section styling */
+.news-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.news-date {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-right: 4px;
+}
+
+.news-older {
+  margin-top: 10px;
+}
+
+.news-older summary {
+  cursor: pointer;
+  color: var(--theme-color);
+  font-weight: 600;
+}
+
+.news-older[open] summary {
+  margin-bottom: 4px;
+}
+
+/* Publication entries */
+.info-table {
+  margin-bottom: 0;
+}
+
+.pub-note {
+  margin: -10px 0 0 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.research-list td {
+  padding: 20px;
+  vertical-align: middle;
+}
+
+.research-list td:first-child {
+  width: 25%;
+}
+
+.research-list td:nth-child(2) {
+  width: 75%;
+}
+
+.research-list td:first-child img,
+.research-list td:first-child video {
+  max-width: 100%;
+  height: auto;
+}
+
+.pub-authors,
+.pub-venue {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.pub-authors {
+  margin-top: 4px;
+}
+
+.pub-authors a {
+  color: inherit;
+}
+
+.pub-authors a:hover {
+  color: var(--theme-color);
+}
+
+.pub-authors strong {
+  color: #222;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pub-award {
+  color: var(--theme-color);
+  font-weight: 600;
+}
+
+.pub-links {
+  margin-top: 8px;
+  line-height: 1;
+}
+
+.pub-links a {
+  display: inline-block;
+  margin: 0 6px 6px 0;
+  padding: 4px 8px;
+  font-size: 13px;
+  border-radius: 3px;
+  background-color: var(--theme-color-light);
+  transition: background-color 0.2s ease;
+}
+
+.pub-links a:hover {
+  background-color: var(--theme-color-light-hover);
+}
+
+.pub-desc {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
   .page-container {
-    width: calc(100% - 24px) !important;
+    width: calc(100% - 24px);
   }
 
   body {
@@ -338,7 +290,7 @@ strong {
     width: 200px;
     height: 200px;
     margin: 0 auto 20px;
-    background: url('headshot/Faculty_Headshot.jpg') center / cover no-repeat;
+    background: url('headshot/headshot_720.jpg') center / cover no-repeat;
     border-radius: 50%;
   }
 
@@ -350,16 +302,6 @@ strong {
 
   .info-table td {
     padding: 10px 15px !important;
-    box-sizing: border-box;
-  }
-
-  .news-row h2 {
-    font-size: 18px;
-  }
-
-  .news-list {
-    width: 100%;
-    padding-left: 20px;
     box-sizing: border-box;
   }
 
@@ -385,13 +327,12 @@ strong {
   }
 
   .research-list > tbody > tr {
-    border-left: 0;
-    border-top: 3px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
     padding: 20px 0;
   }
 
   .research-list td:first-child {
-    padding: 0 20px 15px !important;
+    padding: 0 15px 15px;
     text-align: center;
   }
 
@@ -401,6 +342,6 @@ strong {
   }
 
   .research-list td:nth-child(2) {
-    padding: 0 20px !important;
+    padding: 0 15px;
   }
 }
