@@ -385,6 +385,53 @@ table {
   color: #222;
 }
 
+/* Section menu, fixed in the left margin on wide screens */
+.side-nav {
+  display: none;
+}
+
+h2[id] {
+  scroll-margin-top: 24px;
+}
+
+@media (min-width: 1260px) {
+  .side-nav {
+    position: fixed;
+    top: 120px;
+    left: calc(50% - 450px - 160px);
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #e3e3e3;
+    font-family: var(--font-sans);
+    font-size: 14px;
+  }
+
+  .side-nav a {
+    margin-left: -1px;
+    padding: 6px 0 6px 14px;
+    border-left: 2px solid transparent;
+    color: var(--text-muted);
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .side-nav a:hover {
+    color: var(--theme-color);
+  }
+
+  .side-nav a.active {
+    border-left-color: var(--theme-color);
+    color: var(--theme-color);
+    font-weight: 600;
+  }
+}
+
+@media print {
+  .side-nav {
+    display: none;
+  }
+}
+
 /* Footer */
 .page-footer {
   margin: 8px 0 40px 0;

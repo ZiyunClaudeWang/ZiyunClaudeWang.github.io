@@ -70,10 +70,17 @@
     </script>
   </head>
   <body>
+    <nav class="side-nav" aria-label="Page sections">
+      <a href="#about">About</a>
+      <a href="#join">Join the Lab</a>
+      <a href="#research">Research</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+    </nav>
     <table class="page-container" style="border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
-          <table class="profile-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <table class="profile-table" id="about" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr style="padding:0px">
               <td style="padding:2.5%;width:63%;vertical-align:middle">
                 <p class="name" style="text-align: center;">
@@ -103,7 +110,7 @@
           <table class="info-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr class="announcement-row">
               <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h2>Join the Lab</h2>
+                <h2 id="join">Join the Lab</h2>
                 <div class="recruitment-details">
                   <p>I am currently recruiting Ph.D. students for <strong>Fall 2027</strong>. If you're interested in neuromorphic and event-based vision, 3D perception, or embodied AI and robotics, please email me at <a href="mailto:claude.w@jhu.edu?subject=%5BPhD%20Application%202027%5D%20">claude.w@jhu.edu</a> with the subject line:</p>
                   <p class="subject-line"><code>[PhD Application 2027] Your Name</code></p>
@@ -113,7 +120,7 @@
             </tr>
             <tr class="research-row">
               <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h2>Research</h2>
+                <h2 id="research">Research</h2>
                 <div class="theme-grid">
                   <div class="theme-card">
                     <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h5l2-8 3 14 2-6h8"/></svg>
@@ -138,7 +145,7 @@
             </tr>
             <tr class="news-row">
               <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h2>News &amp; Updates</h2>
+                <h2 id="news">News &amp; Updates</h2>
                 <ul class="news-list">
                   <li><span class="news-date">Sep 2026</span> I co-organized the IROS 2026 workshop <a href="https://iros-2026-athletic-humanoid.github.io/workshop/"><strong>"Perception and Decision Making for Athletic Humanoid Robotics"</strong></a> in Pittsburgh and moderated its panel discussion.</li>
                   <li><span class="news-date">Aug 2026</span> I was the inaugural speaker of the <strong>APL&ndash;JHU Collaboration Seminar Series</strong> at the Johns Hopkins Applied Physics Laboratory, with a talk on "Event-Driven Robotic Vision".</li>
@@ -173,7 +180,7 @@
             </tr>
             <tr class="research-intro-row">
               <td style="padding:10px;width:100%;vertical-align:middle">
-                <h2>Publications</h2>
+                <h2 id="publications">Publications</h2>
                 <p class="pub-note">* Equal contribution</p>
               </td>
             </tr>
@@ -596,6 +603,31 @@
         </td>
       </tr>
     </tbody></table>
+    <script>
+      // Highlight the side-menu entry for the section currently at the top.
+      (function () {
+        var links = Array.prototype.slice.call(document.querySelectorAll('.side-nav a'));
+        var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+        function update() {
+          var current = 0;
+          targets.forEach(function (t, i) {
+            if (t && t.getBoundingClientRect().top <= 140) current = i;
+          });
+          links.forEach(function (a, i) {
+            a.classList.toggle('active', i === current);
+            if (i === current) a.setAttribute('aria-current', 'true');
+            else a.removeAttribute('aria-current');
+          });
+        }
+        var pending = false;
+        window.addEventListener('scroll', function () {
+          if (pending) return;
+          pending = true;
+          requestAnimationFrame(function () { update(); pending = false; });
+        }, { passive: true });
+        update();
+      })();
+    </script>
     <script>
       // Loop paper videos while they are on screen; pause them off screen,
       // and leave them still for visitors who prefer reduced motion.
