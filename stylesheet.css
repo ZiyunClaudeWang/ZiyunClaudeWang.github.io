@@ -132,6 +132,16 @@ table {
 
 .profile-links {
   text-align: center;
+  font-size: 15px;
+}
+
+.profile-links a {
+  white-space: nowrap;
+}
+
+.profile-links .sep {
+  margin: 0 3px;
+  color: var(--text-muted);
 }
 
 .lab-link {
