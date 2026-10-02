@@ -2,6 +2,7 @@
   --theme-color: #8C1515;
   --theme-color-light: rgba(140, 21, 21, 0.1);
   --theme-color-light-hover: rgba(140, 21, 21, 0.2);
+  --theme-color-tint: rgba(140, 21, 21, 0.04);
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", sans-serif;
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Segoe UI", sans-serif;
 }
@@ -258,12 +259,40 @@ strong {
 }
 
 /* Recruitment section styling */
+.announcement-row h2 {
+  margin-top: 0;
+}
+
 .recruitment-details {
-  background-color: white;
+  background-color: var(--theme-color-tint);
   padding: 20px;
   border-radius: 4px;
-  border-left: 3px solid #e0e0e0;
-  margin: 20px 0;
+  border-left: 3px solid var(--theme-color);
+}
+
+.recruitment-details p {
+  margin: 0 0 15px 0;
+}
+
+.recruitment-details p:last-child {
+  margin-bottom: 0;
+}
+
+.recruitment-details strong {
+  font-size: inherit;
+}
+
+.recruitment-details .subject-line {
+  text-align: center;
+}
+
+.recruitment-details code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid var(--theme-color-light-hover);
+  border-radius: 3px;
+  padding: 4px 8px;
 }
 
 /* Responsive design for mobile devices */
@@ -340,7 +369,10 @@ strong {
 
   .recruitment-details {
     padding: 15px;
-    margin: 15px 0;
+  }
+
+  .recruitment-details code {
+    font-size: 13px;
   }
 
   .research-list,
