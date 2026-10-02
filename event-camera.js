@@ -42,7 +42,7 @@
   var TAU = 45;             // event fade time constant, ms
   var FADE = 5 * TAU;       // events are gone after this long
   var PEAK = 0.45;          // opacity of a fresh event
-  var QUIET = 0.05;         // strength once past the intro
+  var QUIET = 0.1;          // strength once past the intro
   var ON = [14, 81, 152];   // SPIKE Lab blue
   var OFF = [214, 69, 65];  // red
 
