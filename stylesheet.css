@@ -34,7 +34,6 @@ p {
   color: #000;
 }
 
-.lab-badge,
 .news-date,
 .news-older summary,
 .pub-note,
@@ -131,22 +130,20 @@ table {
   border-radius: 50%;
 }
 
-.lab-badge {
-  margin: 4px 0 0 0;
+.profile-links {
   text-align: center;
-  font-size: 15px;
-  color: var(--text-muted);
 }
 
-.lab-badge a {
+.lab-link {
   font-weight: 600;
+  white-space: nowrap;
 }
 
-.lab-badge img {
-  width: 26px;
+.lab-link img {
+  width: 22px;
   height: auto;
-  margin-right: 6px;
-  vertical-align: -7px;
+  margin-right: 5px;
+  vertical-align: -5px;
 }
 
 /* Research themes */
