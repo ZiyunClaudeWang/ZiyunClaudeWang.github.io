@@ -171,6 +171,10 @@ table {
   color: var(--text-muted);
 }
 
+.theme-projects a {
+  white-space: nowrap;
+}
+
 /* Recruitment section styling */
 
 .recruitment-details {
