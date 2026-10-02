@@ -42,6 +42,7 @@
   var TAU = 45;             // event fade time constant, ms
   var FADE = 5 * TAU;       // events are gone after this long
   var PEAK = 0.45;          // opacity of a fresh event
+  var QUIET = 0.05;         // strength once past the intro
   var ON = [14, 81, 152];   // SPIKE Lab blue
   var OFF = [214, 69, 65];  // red
 
@@ -205,6 +206,16 @@
     }
   }
 
+  // Events are at full strength while the intro (the profile at the top) is
+  // on screen, then fade to QUIET over the next half screen of scrolling, so
+  // they don't compete with the rest of the page.
+  var intro = document.getElementById('about');
+  function strength() {
+    if (!intro) return 1;
+    var t = -intro.getBoundingClientRect().bottom / (0.5 * window.innerHeight);
+    return 1 - (1 - QUIET) * Math.min(1, Math.max(0, t));
+  }
+
   // Size the sensor to the window. Only grow in height, so a phone's
   // collapsing address bar doesn't reset it mid-scroll.
   function setup() {
@@ -251,6 +262,7 @@
       var age = now - stamp[j];
       pixels[j] = age < FADE ? (pol[j] ? onFade[age | 0] : offFade[age | 0]) : 0;
     }
+    canvas.style.opacity = strength();
     ctx.putImageData(image, 0, 0);
     if (now - lastEvent < FADE || window.scrollY !== lastScroll) {
       requestAnimationFrame(step);
