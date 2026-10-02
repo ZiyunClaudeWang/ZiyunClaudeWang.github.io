@@ -229,37 +229,20 @@ table {
   margin-bottom: 0;
 }
 
-.recruitment-details .subject-line {
-  text-align: center;
-}
-
-.recruit-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-}
-
-.recruit-col h3 {
-  margin: 0 0 8px 0;
-  font-family: var(--font-display);
-  font-size: 19px;
-  font-weight: 700;
-  color: var(--theme-color);
-}
-
 .recruitment-details .recruit-footer {
-  margin-top: 16px;
+  margin-top: 4px;
   padding-top: 12px;
   border-top: 1px solid var(--theme-color-light-hover);
 }
 
 .recruitment-details code {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 13.5px;
+  white-space: nowrap;
   background-color: white;
   border: 1px solid var(--theme-color-light-hover);
   border-radius: 3px;
-  padding: 4px 8px;
+  padding: 1px 6px;
 }
 
 /* News section styling */
@@ -507,7 +490,7 @@ table {
   }
 
   .recruitment-details code {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .research-list td {
@@ -525,11 +508,6 @@ table {
   .theme-grid {
     grid-template-columns: 1fr;
     gap: 14px;
-  }
-
-  .recruit-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
   }
 
   .theme-card {
