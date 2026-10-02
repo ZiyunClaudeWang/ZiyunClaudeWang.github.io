@@ -16,6 +16,42 @@
     <meta property="og:image" content="https://ziyunclaudewang.github.io/headshot/headshot_720.jpg">
     <meta name="twitter:card" content="summary">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ziyun (Claude) Wang",
+      "alternateName": "Ziyun Wang",
+      "jobTitle": "Assistant Professor of Electrical and Computer Engineering",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "Johns Hopkins University",
+        "url": "https://www.jhu.edu/"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Pennsylvania"
+      },
+      "url": "https://ziyunclaudewang.github.io/",
+      "image": "https://ziyunclaudewang.github.io/headshot/headshot_720.jpg",
+      "email": "mailto:claude.w@jhu.edu",
+      "knowsAbout": [
+        "Neuromorphic vision",
+        "Event-based vision",
+        "3D perception",
+        "Embodied AI",
+        "Robotics"
+      ],
+      "sameAs": [
+        "https://spike-lab.org/",
+        "https://scholar.google.com/citations?user=mctHCc0AAAAJ",
+        "https://github.com/ZiyunClaudeWang",
+        "https://twitter.com/ZiyunClaudeWang",
+        "https://engineering.jhu.edu/faculty/ziyun-claude-wang/"
+      ]
+    }
+    </script>
+
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,11 +101,23 @@
           <table class="info-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr class="announcement-row">
               <td style="padding: 10px; width: 100%; vertical-align: middle;">
-                <h2>Prospective Students</h2>
+                <h2>Join the Lab</h2>
                 <div class="recruitment-details">
-                  <p>I am currently recruiting Ph.D. students for <strong>Fall 2027</strong>. If you're interested in real-time perception, learning for robotics, or neuromorphic computing, please email me at <a href="mailto:claude.w@jhu.edu?subject=%5BPhD%20Application%202027%5D%20">claude.w@jhu.edu</a> with the subject line:</p>
-                  <p class="subject-line"><code>[PhD Application 2027] Your Name</code></p>
-                  <p>Please include your CV, transcript (unofficial is fine), and a short statement of interest or description of your research background.</p>
+                  <div class="recruit-grid">
+                    <div class="recruit-col">
+                      <h3>Ph.D. students</h3>
+                      <p>I am recruiting Ph.D. students for <strong>Fall 2027</strong> in neuromorphic and event-based vision, 3D perception, and embodied AI and robotics. Please email me at <a href="mailto:claude.w@jhu.edu?subject=%5BPhD%20Application%202027%5D%20">claude.w@jhu.edu</a> with the subject line:</p>
+                      <p class="subject-line"><code>[PhD Application 2027] Your Name</code></p>
+                      <p>Include your CV, transcript (unofficial is fine), and a short statement of interest or description of your research background.</p>
+                    </div>
+                    <div class="recruit-col">
+                      <h3>Postdocs</h3>
+                      <p>I am also looking for postdoctoral researchers in these areas. Please email me at <a href="mailto:claude.w@jhu.edu?subject=%5BPostdoc%20Application%5D%20">claude.w@jhu.edu</a> with the subject line:</p>
+                      <p class="subject-line"><code>[Postdoc Application] Your Name</code></p>
+                      <p>Include your CV, a research statement, and links to two or three representative papers or projects.</p>
+                    </div>
+                  </div>
+                  <p class="recruit-footer">Learn more about the lab and meet the team on the <a href="https://spike-lab.org/people.html">SPIKE Lab website</a>.</p>
                 </div>
               </td>
             </tr>
@@ -143,7 +191,7 @@
           <table class="research-list" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr id="pub-trace">
           <td>
-            <video class="feat-media" src="images/thumbs/trace.mp4" poster="images/thumbs/trace_poster.webp" width="320" height="180" muted loop playsinline preload="none" data-autoplay aria-label="Robot exploring a scene along an ergodic trajectory for active reconstruction"></video>
+            <div class="video-thumb"><video class="feat-media" src="images/thumbs/trace.mp4" poster="images/thumbs/trace_poster.webp" width="320" height="180" muted loop playsinline preload="none" data-hover-play aria-label="Robot exploring a scene along an ergodic trajectory for active reconstruction"></video></div>
           </td>
           <td>
             <a class="papertitle" href="https://github.com/spikelab-jhu/trace-active-reconstruction">TRACE: Ergodic Trajectory Optimization for Active Scene Reconstruction</a>
@@ -168,7 +216,7 @@
             <div class="hover-media" onmouseout="evis_stop()" onmouseover="evis_start()">
               <img class="feat-media" src="images/thumbs/evis_gui.webp" width="560" height="366" loading="lazy" alt="Isaac Sim event camera live-preview interface">
               <div class="hover-media-overlay" id="evis_demo" style="opacity: 0;">
-                <video src="images/thumbs/evis_franka.mp4" poster="images/thumbs/evis_franka_poster.webp" width="560" height="140" muted loop playsinline preload="none" data-autoplay aria-label="Isaac Sim event camera wrist-camera demo on a Franka robot arm"></video>
+                <video src="images/thumbs/evis_franka.mp4" poster="images/thumbs/evis_franka_poster.webp" width="560" height="140" muted loop playsinline preload="none" data-hover-play aria-label="Isaac Sim event camera wrist-camera demo on a Franka robot arm"></video>
               </div>
             </div>
             <script>
@@ -198,7 +246,7 @@
         </tr>
         <tr id="pub-match-any-events">
           <td>
-            <video class="feat-media" src="images/thumbs/match_any_events.mp4" poster="images/thumbs/match_any_events_poster.webp" width="560" height="316" muted loop playsinline preload="none" data-autoplay aria-label="Real-time Match-Any-Events feature matching demo"></video>
+            <div class="video-thumb"><video class="feat-media" src="images/thumbs/match_any_events.mp4" poster="images/thumbs/match_any_events_poster.webp" width="560" height="316" muted loop playsinline preload="none" data-hover-play aria-label="Real-time Match-Any-Events feature matching demo"></video></div>
           </td>
           <td>
             <a class="papertitle" href="https://github.com/spikelab-jhu/Match-Any-Events">Match-Any-Events: Zero-Shot Motion-Robust Feature Matching Across Wide Baselines for Event Cameras</a>
@@ -218,7 +266,7 @@
         </tr>
         <tr id="pub-evhuman">
           <td>
-            <video class="feat-media" src="images/thumbs/evhuman.mp4" poster="images/thumbs/evhuman_poster.webp" width="560" height="280" muted loop playsinline preload="none" data-autoplay aria-label="Events from a walking person and the reconstructed 3D human body"></video>
+            <div class="video-thumb"><video class="feat-media" src="images/thumbs/evhuman.mp4" poster="images/thumbs/evhuman_poster.webp" width="560" height="280" muted loop playsinline preload="none" data-hover-play aria-label="Events from a walking person and the reconstructed 3D human body"></video></div>
           </td>
           <td>
             <a class="papertitle" href="evhuman/">Continuous-Time Human Motion Field from Events</a>
@@ -262,7 +310,7 @@
         </tr>
         <tr id="pub-continuitycam">
           <td>
-            <video class="feat-media" src="images/thumbs/continuity_cam.mp4" poster="images/thumbs/continuity_cam_poster.webp" width="560" height="316" muted loop playsinline preload="none" data-autoplay aria-label="Continuous color video decoded from events and a single frame"></video>
+            <div class="video-thumb"><video class="feat-media" src="images/thumbs/continuity_cam.mp4" poster="images/thumbs/continuity_cam_poster.webp" width="560" height="316" muted loop playsinline preload="none" data-hover-play aria-label="Continuous color video decoded from events and a single frame"></video></div>
           </td>
           <td>
             <a class="papertitle" href="continuitycam/">Event-based Continuous Color Video Decompression from Single Frames</a>
@@ -284,7 +332,7 @@
         </tr>
         <tr id="pub-un-evimo">
           <td>
-            <video class="feat-media" src="images/thumbs/unseg.mp4" poster="images/thumbs/unseg_poster.webp" width="320" height="216" muted loop playsinline preload="none" data-autoplay aria-label="Un-EVIMO independent motion segmentation demo"></video>
+            <div class="video-thumb"><video class="feat-media" src="images/thumbs/unseg.mp4" poster="images/thumbs/unseg_poster.webp" width="320" height="216" muted loop playsinline preload="none" data-hover-play aria-label="Un-EVIMO independent motion segmentation demo"></video></div>
           </td>
           <td>
             <a class="papertitle" href="un-evimo/">Un-EVIMO: Unsupervised Event-based Independent Motion Segmentation</a>
@@ -326,7 +374,7 @@
         </tr>
         <tr id="pub-tram">
           <td>
-            <video class="feat-media" src="images/thumbs/tram.mp4" poster="images/thumbs/tram_poster.webp" width="560" height="316" muted loop playsinline preload="none" data-autoplay aria-label="TRAM recovering 3D human motion from in-the-wild video"></video>
+            <div class="video-thumb"><video class="feat-media" src="images/thumbs/tram.mp4" poster="images/thumbs/tram_poster.webp" width="560" height="316" muted loop playsinline preload="none" data-hover-play aria-label="TRAM recovering 3D human motion from in-the-wild video"></video></div>
           </td>
           <td>
             <a class="papertitle" href="https://yufu-wang.github.io/tram4d/">TRAM: Global Trajectory and Motion of 3D Humans from in-the-wild Videos</a>
@@ -347,7 +395,7 @@
         </tr>
         <tr id="pub-track-fast">
           <td>
-            <video class="feat-media" src="images/thumbs/track_fast.mp4" poster="images/thumbs/track_fast_poster.webp" width="460" height="216" muted loop playsinline preload="none" data-autoplay aria-label="Fast and robust point tracking demo"></video>
+            <div class="video-thumb"><video class="feat-media" src="images/thumbs/track_fast.mp4" poster="images/thumbs/track_fast_poster.webp" width="460" height="216" muted loop playsinline preload="none" data-hover-play aria-label="Fast and robust point tracking demo"></video></div>
           </td>
           <td>
             <a class="papertitle" href="https://timsong412.github.io/FastOmniTrack/">Track Everything Everywhere Fast and Robustly</a>
@@ -369,7 +417,7 @@
         </tr>
         <tr id="pub-m3ed">
           <td>
-            <video class="feat-media" src="images/thumbs/m3ed.mp4" poster="images/thumbs/m3ed_poster.webp" width="560" height="314" muted loop playsinline preload="none" data-autoplay aria-label="Stereo camera frames and event streams from the M3ED dataset"></video>
+            <div class="video-thumb"><video class="feat-media" src="images/thumbs/m3ed.mp4" poster="images/thumbs/m3ed_poster.webp" width="560" height="314" muted loop playsinline preload="none" data-hover-play aria-label="Stereo camera frames and event streams from the M3ED dataset"></video></div>
           </td>
           <td>
             <a class="papertitle" href="https://m3ed.io/">M3ED: Multi-Robot, Multi-Sensor, Multi-Environment Event Dataset</a>
@@ -395,7 +443,7 @@
         </tr>
         <tr id="pub-evac3d">
           <td>
-            <video class="feat-media" src="images/thumbs/evac3d.mp4" poster="images/thumbs/evac3d_poster.webp" width="560" height="316" muted loop playsinline preload="none" data-autoplay aria-label="EvAC3D reconstructing an object from event-based apparent contours"></video>
+            <div class="video-thumb"><video class="feat-media" src="images/thumbs/evac3d.mp4" poster="images/thumbs/evac3d_poster.webp" width="560" height="316" muted loop playsinline preload="none" data-hover-play aria-label="EvAC3D reconstructing an object from event-based apparent contours"></video></div>
           </td>
           <td>
             <a class="papertitle" href="evac3d/">EvAC3D: From Event-Based Apparent Contours to 3D Models via Continuous Visual Hulls</a>
@@ -415,7 +463,7 @@
         </tr>
         <tr id="pub-ev-catcher">
           <td>
-            <video class="feat-media" src="images/thumbs/ev_catcher.mp4" poster="images/thumbs/ev_catcher_poster.webp" width="560" height="314" muted loop playsinline preload="none" data-autoplay aria-label="EV-Catcher robot catching a fast-moving ball"></video>
+            <div class="video-thumb"><video class="feat-media" src="images/thumbs/ev_catcher.mp4" poster="images/thumbs/ev_catcher_poster.webp" width="560" height="314" muted loop playsinline preload="none" data-hover-play aria-label="EV-Catcher robot catching a fast-moving ball"></video></div>
           </td>
           <td>
             <a class="papertitle" href="ev-catcher/">EV-Catcher: High-Speed Object Catching Using Low-Latency Event-Based Neural Networks</a>
@@ -554,25 +602,39 @@
           </td>
         </tr>
           </tbody></table>
+          <p class="page-footer">Last updated October 2026</p>
         </td>
       </tr>
     </tbody></table>
     <script>
-      // Play looping videos only while they are on screen, and not at all for reduced-motion users.
+      // Paper videos stay paused on their poster: hover a paper to play it on
+      // desktop, tap the image to play or pause it on touch screens.
       (function () {
-        var videos = document.querySelectorAll('video[data-autoplay]');
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        if (!('IntersectionObserver' in window)) {
-          videos.forEach(function (v) { v.play().catch(function () {}); });
-          return;
-        }
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) entry.target.play().catch(function () {});
-            else entry.target.pause();
-          });
-        }, { rootMargin: '200px 0px' });
-        videos.forEach(function (v) { observer.observe(v); });
+        var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        document.querySelectorAll('.research-list tr').forEach(function (row) {
+          var video = row.querySelector('video[data-hover-play]');
+          if (!video) return;
+          var thumb = video.closest('.video-thumb');
+          function play() {
+            video.play().then(function () {
+              if (thumb) thumb.classList.add('is-playing');
+            }).catch(function () {});
+          }
+          function stop() {
+            video.pause();
+            if (thumb) thumb.classList.remove('is-playing');
+          }
+          if (canHover) {
+            if (reduceMotion) return;
+            row.addEventListener('mouseenter', play);
+            row.addEventListener('mouseleave', stop);
+          } else {
+            video.addEventListener('click', function () {
+              if (video.paused) play(); else stop();
+            });
+          }
+        });
       })();
     </script>
   </body>
