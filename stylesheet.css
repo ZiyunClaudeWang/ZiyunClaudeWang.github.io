@@ -145,17 +145,13 @@ table {
   gap: 24px;
 }
 
-.theme-media {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 6px;
-  background-color: #111;
+.theme-card {
+  padding-top: 12px;
+  border-top: 2px solid var(--theme-color);
 }
 
 .theme-card h3 {
-  margin: 12px 0 4px 0;
+  margin: 0 0 6px 0;
   font-family: var(--font-display);
   font-size: 17px;
   font-weight: 600;
@@ -422,25 +418,9 @@ table {
     table-layout: fixed;
   }
 
-  /* Research themes: a swipeable row with the next card peeking in */
   .theme-grid {
-    display: flex;
-    gap: 14px;
-    margin: 0 -15px;
-    padding: 0 15px 4px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 15px;
-    scrollbar-width: none;
-  }
-
-  .theme-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .theme-card {
-    flex: 0 0 82%;
-    scroll-snap-align: start;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   /* Publications: full-width media above the text */
