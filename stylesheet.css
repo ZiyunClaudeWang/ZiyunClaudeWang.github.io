@@ -135,7 +135,8 @@ table {
 }
 
 /* Research themes */
-.research-row h2 {
+/* First section after the profile sits closer to it */
+.info-table tr:first-child h2 {
   margin-top: 0;
 }
 
