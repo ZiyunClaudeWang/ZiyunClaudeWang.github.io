@@ -5,8 +5,9 @@
   --theme-color-light-hover: rgba(14, 81, 152, 0.2);
   --theme-color-tint: rgba(14, 81, 152, 0.05);
   --text-muted: #555;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", sans-serif;
-  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Segoe UI", sans-serif;
+  --font-display: var(--font-serif);
   --font-mono: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }
 
@@ -21,15 +22,27 @@ a:hover {
   text-decoration: none;
 }
 
+/* Serif for reading text, sans for small labels and metadata */
 body,
 td,
 th,
 tr,
 p {
-  font-family: var(--font-sans);
-  font-size: 16px;
+  font-family: var(--font-serif);
+  font-size: 17px;
   line-height: 1.6;
   color: #000;
+}
+
+.lab-badge,
+.news-date,
+.news-older summary,
+.pub-note,
+.pub-authors,
+.pub-venue,
+.pub-links,
+.theme-projects {
+  font-family: var(--font-sans);
 }
 
 html {
@@ -46,7 +59,7 @@ html {
 
 .page-container {
   width: calc(100% - 32px);
-  max-width: 900px;
+  max-width: 960px;
 }
 
 /* Section headers */
@@ -55,14 +68,15 @@ h2 {
   padding-bottom: 10px;
   font-weight: 600;
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 30px;
   color: var(--theme-color);
 }
 
 .papertitle {
   font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.35;
   color: var(--theme-color);
 }
 
@@ -70,7 +84,8 @@ h2 {
   padding-top: 20px;
   margin: 0;
   font-family: var(--font-display);
-  font-size: 36px;
+  font-size: 40px;
+  line-height: 1.2;
   color: var(--theme-color);
 }
 
@@ -119,7 +134,7 @@ table {
 .lab-badge {
   margin: 4px 0 0 0;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-muted);
 }
 
@@ -154,21 +169,22 @@ table {
 .theme-card h3 {
   margin: 0 0 6px 0;
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
+  line-height: 1.35;
   color: var(--theme-color);
 }
 
 .theme-card p {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #333;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #222;
 }
 
 .theme-card .theme-projects {
   margin-top: 8px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
@@ -199,7 +215,7 @@ table {
 
 .recruitment-details code {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 15px;
   background-color: white;
   border: 1px solid var(--theme-color-light-hover);
   border-radius: 3px;
@@ -213,6 +229,7 @@ table {
 }
 
 .news-date {
+  font-size: 15px;
   color: var(--text-muted);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
@@ -240,12 +257,12 @@ table {
 
 .pub-note {
   margin: -10px 0 0 0;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-muted);
 }
 
 .research-list td {
-  padding: 20px;
+  padding: 18px 14px;
   vertical-align: middle;
 }
 
@@ -274,14 +291,14 @@ table {
 .feat-media {
   display: block;
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   height: auto;
   border-radius: 6px;
 }
 
 .pub-authors,
 .pub-venue {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   color: var(--text-muted);
 }
@@ -317,8 +334,8 @@ table {
 .pub-links a {
   display: inline-block;
   margin: 0 6px 6px 0;
-  padding: 4px 8px;
-  font-size: 13px;
+  padding: 5px 9px;
+  font-size: 14px;
   border-radius: 3px;
   background-color: var(--theme-color-light);
   transition: background-color 0.2s ease;
@@ -330,34 +347,35 @@ table {
 
 .pub-desc {
   margin: 4px 0 0 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #333;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #222;
 }
 
 /* Tablets and phones */
 @media (max-width: 768px) {
-  .page-container {
-    width: calc(100% - 24px);
+  body {
+    margin: 0;
+    font-size: 16px;
   }
 
-  body {
-    font-size: 14px;
+  .page-container {
+    width: 100%;
   }
 
   h2 {
     margin: 32px 0 14px 0;
     padding-bottom: 0;
-    font-size: 21px;
+    font-size: 24px;
   }
 
   .papertitle {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .profile-table p.name,
   .profile-table p.name strong {
-    font-size: 26px !important;
+    font-size: 30px !important;
     line-height: 1.15;
   }
 
@@ -368,6 +386,8 @@ table {
   .profile-table td:first-child {
     display: block;
     width: 100% !important;
+    padding: 24px 16px 0 !important;
+    box-sizing: border-box;
   }
 
   .profile-table td:last-child {
@@ -379,7 +399,7 @@ table {
     display: block;
     width: 150px;
     height: 150px;
-    margin: 4px auto 16px;
+    margin: 0 auto 16px;
     background: url('headshot/headshot_720.jpg') center / cover no-repeat;
     border-radius: 50%;
   }
@@ -387,15 +407,16 @@ table {
   .profile-table p:not(.name),
   .info-table p,
   .info-table li {
+    font-size: 16px !important;
+  }
+
+  .info-table .theme-card .theme-projects,
+  .info-table .pub-note {
     font-size: 14px !important;
   }
 
-  .info-table .theme-card .theme-projects {
-    font-size: 13px !important;
-  }
-
   .info-table td {
-    padding: 10px 15px !important;
+    padding: 10px 16px !important;
     box-sizing: border-box;
   }
 
@@ -404,15 +425,15 @@ table {
   }
 
   .recruitment-details {
-    padding: 15px;
+    padding: 16px;
   }
 
   .recruitment-details code {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .research-list td {
-    padding: 16px 15px;
+    padding: 16px;
   }
 }
 
@@ -444,11 +465,16 @@ table {
   }
 
   .research-list td:first-child {
-    padding: 0 15px 12px;
+    padding: 0 16px 12px;
   }
 
   .research-list td:nth-child(2) {
-    padding: 0 15px;
+    padding: 0 16px;
+  }
+
+  .pub-authors,
+  .pub-venue {
+    font-size: 14px;
   }
 
   .feat-media,
