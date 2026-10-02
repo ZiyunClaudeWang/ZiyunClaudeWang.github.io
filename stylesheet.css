@@ -230,14 +230,18 @@ table {
 }
 
 
+.recruitment-details .subject-line {
+  text-align: center;
+}
+
 .recruitment-details code {
   font-family: var(--font-mono);
-  font-size: 13.5px;
+  font-size: 14px;
   white-space: nowrap;
   background-color: white;
   border: 1px solid var(--theme-color-light-hover);
   border-radius: 3px;
-  padding: 1px 6px;
+  padding: 4px 8px;
 }
 
 /* News section styling */
